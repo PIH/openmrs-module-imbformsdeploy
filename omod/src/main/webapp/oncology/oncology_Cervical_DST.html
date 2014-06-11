@@ -356,7 +356,8 @@ if(jQuery){
     					    setInnerHtml('chestXRay', '<img src="/openmrs/images/checkmark.png"/>');
     					
     					    var obsDateTime = $j('#chestXRayObs span:last').text();  
-        			        setInnerHtml('dateOfchestXRay', 'on '+obsDateTime);       			       
+        			        setInnerHtml('dateOfchestXRay', 'on '+obsDateTime);     
+        			        
     					
     					}
     					// Date here
@@ -511,9 +512,19 @@ if(jQuery){
    							 setInnerHtml('surgeryFacilityCHUB','CHUB');
     						if(hasValue('surgeryFacilityObsOthers'))
    							 setInnerHtml('surgeryFacilityothers','OTHERS:');
-    						setInnerHtml('surgeryFacilityothersText',''+getValueOfChildSpan('surgeryFacilityObsOthersText'));
-    						if(hasValue('surgeryTypeLeftObs'))
-    						  setInnerHtml('surgeryTypeLeft', 'HYSTERECTOMY');
+    						 setInnerHtml('surgeryFacilityothersText',''+getValueOfChildSpan('surgeryFacilityObsOthersText'));
+    						if(hasValue('surgeryTypeHysterectomyObs'))
+    						  setInnerHtml('surgeryTypeHysterectomy', 'Hysterectomy');
+    						
+    						if(hasValue('hysterectomyBiopsyObs'))
+      						  setInnerHtml('hysterectomyBiopsy', 'Leep or cone Biopsy');
+    						if(hasValue('hysterectomySimpleObs'))
+      						  setInnerHtml('hysterectomySimple', 'Simple biopsy');
+    						if(hasValue('hysterectomyRadicalObs'))
+      						  setInnerHtml('hysterectomyRadical', 'Radical biopsy');
+    						if(hasValue('hysterectomyOthersObs'))
+      						  setInnerHtml('hysterectomyOthers', 'others');
+    						  setInnerHtml('hysterectomyText',''+getValueOfChildSpan('hysterectomyTextObs'));
     					}
  
 
@@ -666,10 +677,13 @@ if(jQuery){
 	    	setInnerHtml('otherPathologicDiagnosisNonCoded', ''+getValue('otherPathologicDiagnosisNonCodedObs.value'));
 	    	
 			
-		if(getValue('chestXRayObs.value') !=null )
+		if(getValue('chestXRayObs.value') !=null ){
 	    	    setInnerHtml('chestXRay', '<img src="/openmrs/images/checkmark.png"/>');
+
+        var studyDate= $j.datepicker.formatDate('dd/M/yy',$j('#chestXRayObs').find('.hasDatepicker').datepicker('getDate'));
+	    setInnerHtml('dateOfchestXRay', 'on '+studyDate);
 		
-		//Date here
+		}
 		
 	    if(getValue('siteOfImagingStudiesChestBUTAROObs.value') !=null )
 	    	    setInnerHtml('siteOfImagingStudiesChestBUTARO', 'BUTARO');
@@ -685,11 +699,12 @@ if(jQuery){
 			
 			
 	    
-	    if(getValue('abdominalPelvicUltrasoundObs.value') !=null )
+	    if(getValue('abdominalPelvicUltrasoundObs.value') !=null ){
     	    setInnerHtml('abdominalPelvicUltrasound', '<img src="/openmrs/images/checkmark.png"/>');
 	
-		//Date here
-	
+	    var studyDate= $j.datepicker.formatDate('dd/M/yy',$j('#abdominalPelvicUltrasoundObs').find('.hasDatepicker').datepicker('getDate'));
+	    setInnerHtml('dateOfabdominalPelvicUltrasound', 'on '+studyDate);
+	    }
     	if(getValue('siteOfImagingStudiesUltrasoundBUTAROObs.value') !=null )
     	    setInnerHtml('siteOfImagingStudiesUltrasoundBUTARO', 'BUTARO');
     	if(getValue('siteOfImagingStudiesUltrasoundKFHObs.value') !=null )
@@ -703,14 +718,12 @@ if(jQuery){
     	setInnerHtml('siteOfImagingStudiesUltrasoundOtherText', ''+getValue('siteOfImagingStudiesUltrasoundOtherObsText.value'));
 		
     
-    	if(getValue('CTScanOfChestAbdomenPelvisObs.value') !=null )
+    	if(getValue('CTScanOfChestAbdomenPelvisObs.value') !=null ){
 	    	setInnerHtml('CTScanOfChestAbdomenPelvis', '<img src="/openmrs/images/checkmark.png"/>');
 
-		//Date here
-		
-		
-		
-		
+    	var studyDate= $j.datepicker.formatDate('dd/M/yy',$j('#CTScanOfChestAbdomenPelvisObs').find('.hasDatepicker').datepicker('getDate'));
+	    setInnerHtml('dateOfCTScanOfChestAbdomenPelvis', 'on '+studyDate);
+		 }
 
 		if(getValue('siteOfImagingStudiesCTScanChestAbdomenPelvisBUTAROObs.value') !=null )
 	    	setInnerHtml('siteOfImagingStudiesCTScanChestAbdomenPelvisBUTARO', 'BUTARO');
@@ -729,6 +742,9 @@ if(jQuery){
     		setInnerHtml('OtherImagingStudy', '<img src="/openmrs/images/checkmark.png"/>');
 		 if(getValue('OtherImagingStudyTextObs.value')){
 		        setInnerHtml('OtherImagingStudyText', '  ('+getValue('OtherImagingStudyTextObs.value')+')');
+		        
+		        var studyDate= $j.datepicker.formatDate('dd/M/yy',$j('#OtherImagingStudyTextObs').find('.hasDatepicker').datepicker('getDate'));
+			    setInnerHtml('dateOfOtherImagingStudy', 'on '+studyDate);
 		        }
 		 
 		
@@ -807,8 +823,18 @@ if(jQuery){
       		if(getValue('surgeryFacilityObsOthers.value')!=null)
      		  setInnerHtml('surgeryFacilityothers','OTHERS:');
       		  setInnerHtml('surgeryFacilityothersText',''+getValue('surgeryFacilityObsOthersText.value'));  
-      		if(getValue('surgeryTypeLeftObs.value')!=null)
-     			setInnerHtml('surgeryTypeLeft', 'HYSTERECTOMY');
+      		if(getValue('surgeryTypeHysterectomyObs.value')!=null)
+     			setInnerHtml('surgeryTypeHysterectomy', 'Hysterectomy');
+      		
+      		if(getValue('hysterectomyBiopsyObs.value')!=null)
+			  setInnerHtml('hysterectomyBiopsy', 'Leep or cone Biopsy');
+			if(getValue('hysterectomySimpleObs.value')!=null)
+			  setInnerHtml('hysterectomySimple', 'Simple biopsy');
+			if(getValue('hysterectomyRadicalObs.value')!=null)
+			  setInnerHtml('hysterectomyRadical', 'Radical biopsy');
+			if(getValue('hysterectomyOthersObs.value')!=null)
+			   setInnerHtml('hysterectomyOthers', 'others');
+			   setInnerHtml('hysterectomyText',''+getValue('hysterectomyTextObs'));
       					
       		
       	}
@@ -1211,21 +1237,17 @@ if(jQuery){
 		</tr>
 		<tr class="diagnosisPrintArea">
 			<td class="lables">Type of Surgery</td>
-			<td><span id="surgeryTypeLeft"></span>
-			   <!--  Right Side: <span id="surgeryTypeRight"></span>&#160;&#160;&#160;
-			 </td>
+			<td><span id="surgeryTypeHysterectomy"></span></td>
 			<td colspan="2" class="values">
 			
-			<span id="surgeryLeftPNephro"></span>
-			<span id="surgeryLeftTNephro"></span>
-			<span id="surgeryTypeLeftOther"></span>
-			<span id="surgeryTypeLeftOtherText"></span>
+			<span id="hysterectomyBiopsy"></span>
+			<span id="hysterectomySimple"></span>
+			<span id="hysterectomyRadical"></span>
+			<span id="hysterectomyOthers"></span>
+			<span id="hysterectomyText"></span>
 			<br/>
 			
-			<span id="surgeryRightPNephro"></span>
-			<span id="surgeryRightTNephro"></span>
-			<span id="surgeryTypeRightOther"></span>
-			<span id="surgeryTypeRightOtherText"></span> -->
+			
 			</td>
 		</tr>
 	</table>
@@ -2315,7 +2337,7 @@ if(jQuery){
 				<obs id="surgeryFacilityCHUKObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" style="checkbox" />
 				<obs id="surgeryFacilityCHUBObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" style="checkbox" />
 				<obs id="surgeryFacilityObsOthers" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="OTHERS:" style="checkbox" />
-				<obs id="surgeryFacilityObsOthersText" conceptId="ee9b1c10-c3ba-4524-90eb-b3ece9de11f0" labelText="" />
+				<obs id="surgeryFacilityObsOthersText" conceptId="13c825f8-615a-429d-b813-ef9bdf8830ea" labelText="" />
 				</td>
 			</tr>
 			<tr class="spaceUnder">
@@ -2328,10 +2350,21 @@ if(jQuery){
 			</tr>
 			<tr class="spaceUnder">
 				<td>Surgery Type</td>
-				
 				<td>
-				<obs id="surgeryTypeLeftObs" conceptId="3ccfbd0e-26fe-102b-80cb-0017a47871b2" answerConceptId="3ceb4ee8-26fe-102b-80cb-0017a47871b2" answerLabel="Hysterectomy (specify type):-------------" style="checkbox" />
+				<table style='border: 0px;'><tr>
+				<td><obs id="surgeryTypeHysterectomyObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="3ceb4ee8-26fe-102b-80cb-0017a47871b2" answerLabel="Hysterectomy:" style="checkbox" />
 				</td>
+				<td colspan="2"><table style='border: 0px;'><tr><td class="checkboxGroup">
+				<obs id="hysterectomyBiopsyObs" conceptId="3ceb4ee8-26fe-102b-80cb-0017a47871b2" answerConceptId="172b51c0-81b5-4933-966c-4b80d33f1944" answerLabel="Leep or cone biopsy" style="checkbox" />
+				<obs id="hysterectomySimpleObs" conceptId="3ceb4ee8-26fe-102b-80cb-0017a47871b2" answerConceptId="2e705d60-0984-4cbd-8aa2-ad61a3cd98dc" answerLabel="Simple Hysterectomy" style="checkbox" />
+				<obs id="hysterectomyRadicalObs" conceptId="3ceb4ee8-26fe-102b-80cb-0017a47871b2" answerConceptId="54262f43-0889-458d-994d-478ad1ae4f67" answerLabel="Radical Hysterectomy" style="checkbox" />
+				<obs id="hysterectomyOthersObs" conceptId="3ceb4ee8-26fe-102b-80cb-0017a47871b2" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Others:" style="checkbox" />
+				<obs id="hysterectomyTextObs" conceptId="c9c3bc07-2e9c-4f90-925e-faf478761bbc" labelText=""  />
+				<br/></td></tr></table>
+				</td></tr></table>
+				</td>
+				<td></td>
+				<td></td>
 			</tr>
 			
 		</TBODY>

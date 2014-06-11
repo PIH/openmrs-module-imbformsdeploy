@@ -281,10 +281,11 @@ if(jQuery){
    						setInnerHtml('changeInTreatmentIntentOtherResult', 'change in treatment plan because of other result (specify):');
    					    setInnerHtml('changeInTreatmentIntentOtherResultText', ''+getValueOfChildSpan('changeInTreatmentIntentOtherResultsSpecifiedObs'));
    					 
-					if(hasValue('imagingStudyChestXRayObs'))
-						setInnerHtml('imagingStudyChestXRay', 'DONE');
-					if(hasValue('dateOfImagingStudiesChestObs'))
-						setInnerHtml('dateOfImagingStudiesChest', ''+getValueOfChildSpan('dateOfImagingStudiesChestObs'));
+					if(hasValue('imagingStudyChestXRayObs')){
+						setInnerHtml('imagingStudyChestXRay', '<b>\u2713 </b>');
+					    var obsDateTime = $j('#imagingStudyChestXRayObs span:last').text();  
+			            setInnerHtml('dateOfImagingStudiesChest', 'Study Date: '+obsDateTime); 
+					}
 					if(hasValue('imagingStudySiteofChestButaroObs'))
 						setInnerHtml('imagingStudySiteofChestButaro', 'Butaro');
 					if(hasValue('imagingStudySiteofChestKFHObs'))
@@ -297,10 +298,11 @@ if(jQuery){
 						setInnerHtml('imagingStudiesChestothersNonCoded', 'Others:');
 						setInnerHtml('imagingStudiesChestothersNonCodedText', ''+getValueOfChildSpan('imagingStudiesChestothersNonCodedTextObs'));
 						
-					if(hasValue('imagingStudyAbdoUltrasoundObs'))
-						setInnerHtml('imagingStudyAbdoUltrasound', 'DONE');
-					if(hasValue('dateOfImagingStudiesAbdoUltraObs'))
-						setInnerHtml('dateOfImagingStudiesAbdoUltra', ''+getValueOfChildSpan('dateOfImagingStudiesAbdoUltraObs'));
+					if(hasValue('imagingStudyAbdoUltrasoundObs')){
+						setInnerHtml('imagingStudyAbdoUltrasound', '<b>\u2713 </b>');
+					    var obsDateTime = $j('#imagingStudyAbdoUltrasoundObs span:last').text();  
+		               setInnerHtml('dateOfImagingStudyAbdoUltrasound', 'Study Date: '+obsDateTime); 
+					}
 					if(hasValue('imagingStudySiteAbdoUltrasoundButaroObs'))
 						setInnerHtml('imagingStudySiteAbdoUltrasoundButaro', 'Butaro');
 					if(hasValue('imagingStudySiteAbdoUltrasoundKFHObs'))
@@ -314,10 +316,11 @@ if(jQuery){
 					  setInnerHtml('imagingStudiesOtherAbdoUltrasoundText', ''+getValueOfChildSpan('imagingStudiesAbdoUltrasoundOthersTextObs'));
 						
 							
-			        if(hasValue('imagingStudyCTScanAbdoPelvisObs'))
-					 setInnerHtml('imagingStudyCTScanAbdoPelvis', 'DONE');
-				   if(hasValue('dateOfImagingStudiesAbdoUltraObs'))
-					setInnerHtml('dateOfImagingStudiesAbdoUltra', ''+getValueOfChildSpan('dateOfImagingStudiesAbdoUltraObs'));
+			        if(hasValue('imagingStudyCTScanAbdoPelvisObs')){
+					 setInnerHtml('imagingStudyCTScanAbdoPelvis', '<b>\u2713 </b>');
+			        var obsDateTime = $j('#imagingStudyCTScanAbdoPelvisObs span:last').text();  
+		            setInnerHtml('dateOfImagingStudyAbdoCTScanAbdoPelvis', 'Study Date: '+obsDateTime); 
+			        }
 				   if(hasValue('imagingStudySiteCTScanAbdoPelvisButaroObs'))
 					setInnerHtml('imagingStudySiteCTScanAbdoPelvisButaro', 'Butaro');
 				   if(hasValue('imagingStudySiteCTScanAbdoPelvisKFHObs'))
@@ -330,10 +333,11 @@ if(jQuery){
 					setInnerHtml('imagingStudiesCTScanAbdoPelvisOthersNonCoded', 'Others:');
 					setInnerHtml('imagingStudiesCTScanAbdoPelvisothersNonCodedText', ''+getValueOfChildSpan('imagingStudiesCTScanAbdoPelvisothersNonCodedTextObs'));
 				  
-				  if(hasValue('imagingStudyCTScanChestObs'))
-					setInnerHtml('imagingStudyCTScanChest', 'DONE');
-				  if(hasValue('dateOfImagingStudiesAbdoUltraObs'))
-					setInnerHtml('dateOfImagingStudiesAbdoUltra', ''+getValueOfChildSpan('dateOfImagingStudiesAbdoUltraObs'));
+				  if(hasValue('imagingStudyCTScanChestObs')){
+					setInnerHtml('imagingStudyCTScanChest', '<b>\u2713 </b>');
+				  var obsDateTime = $j('#imagingStudyCTScanChestObs span:last').text();  
+	               setInnerHtml('dateOfImagingStudyCTScanChest', 'Study Date: '+obsDateTime); 
+				  }
 				  if(hasValue('imagingStudySiteCTScanChestButaroObs'))
 					setInnerHtml('imagingStudySiteCTScanChestButaro', 'Butaro');
 				  if(hasValue('imagingStudySiteCTScanChestKFHObs'))
@@ -346,10 +350,11 @@ if(jQuery){
 					setInnerHtml('imagingStudiesCTScanChestOthersNonCoded', 'Others:');
 					setInnerHtml('imagingStudiesCTScanChestothersNonCodedText', ''+getValueOfChildSpan('imagingStudiesCTScanChestothersNonCodedTextObs'));
 					
-		         if(hasValue('otherImagingStudyNonCodedObs'))
-					setInnerHtml('otherImagingStudyNonCoded', 'DONE');
-				  if(hasValue('dateOfotherImagingStudiesAbdoUltraObs'))
-					setInnerHtml('dateOfotherImagingStudiesAbdoUltra', ''+getValueOfChildSpan('dateOfotherImagingStudiesAbdoUltraObs'));
+		         if(hasValue('otherImagingStudyNonCodedObs')){
+					setInnerHtml('otherImagingStudyNonCoded', '<b>\u2713 </b>');
+		            var obsDateTime = $j('#otherImagingStudyNonCodedObs span:last').text();  
+		            setInnerHtml('dateOfothersImagingStudies', 'Study Date: '+obsDateTime); 
+		           }
 				  if(hasValue('otherImagingStudySiteNonCodedButaroObs'))
 					setInnerHtml('otherImagingStudySiteNonCodedButaro', 'Butaro');
 				  if(hasValue('otherImagingStudySiteNonCodedKFHObs'))
@@ -514,10 +519,11 @@ if(jQuery){
 			 setInnerHtml('changeInTreatmentIntentOtherResult', 'change in treatment plan because of other result (specify):');
 			 setInnerHtml('changeInTreatmentIntentOtherResultText', ''+getValue('changeInTreatmentIntentOtherResultsSpecifiedObs.value'));
 				 
-			if(getValue('imagingStudyChestXRayObs.value')!=null) 
-					setInnerHtml('imagingStudyChestXRay', 'Done');
-			 if(getValue('dateOfImagingStudiesChestObs.value')!=null)
-						setInnerHtml('dateOfImagingStudiesChest', ''+getValue('dateOfImagingStudiesChestObs.value'));
+			if(getValue('imagingStudyChestXRayObs.value')!=null) {
+				setInnerHtml('imagingStudyChestXRay', '<b>\u2713 </b>');
+			  var studyDate= $j.datepicker.formatDate('dd/M/yy',$j('#imagingStudyChestXRayObs').find('.hasDatepicker').datepicker('getDate'));
+			    setInnerHtml('dateOfImagingStudiesChest', 'Study Date: '+studyDate);
+			}
 			if(getValue('imagingStudySiteofChestButaroObs.value')!=null)
 			setInnerHtml('imagingStudySiteofChestButaro', 'Butaro');
 			if(getValue('imagingStudySiteofChestKFHObs.value')!=null)
@@ -530,11 +536,12 @@ if(jQuery){
 				setInnerHtml('imagingStudiesChestothersNonCoded', 'Others:');
 				setInnerHtml('imagingStudiesChestothersNonCodedText', ''+getValue('imagingStudiesChestothersNonCodedTextObs.value'));
 								
-		    if(getValue('imagingStudyAbdoUltrasoundObs.value')!=null) 
-			  setInnerHtml('imagingStudyAbdoUltrasound', 'Done');
-		    if(getValue('dateOfImagingStudiesAbdoUltraObs.value')!=null)
-			 setInnerHtml('dateOfImagingStudiesAbdoUltraObs', ''+getValue('dateOfImagingStudiesAbdoUltraObs.value'));
-		    if(getValue('imagingStudySiteAbdoUltrasoundButaroObs.value')!=null)
+		    if(getValue('imagingStudyAbdoUltrasoundObs.value')!=null) {
+			  setInnerHtml('imagingStudyAbdoUltrasound', '<b>\u2713 </b>');
+		    var studyDate= $j.datepicker.formatDate('dd/M/yy',$j('#imagingStudyAbdoUltrasoundObs').find('.hasDatepicker').datepicker('getDate'));
+		    setInnerHtml('dateOfImagingStudyAbdoUltrasound', 'Study Date: '+studyDate);
+		    }
+		  if(getValue('imagingStudySiteAbdoUltrasoundButaroObs.value')!=null)
 			 setInnerHtml('imagingStudySiteAbdoUltrasoundButaro', 'Butaro');
 			if(getValue('imagingStudySiteAbdoUltrasoundKFHObs.value')!=null)
 			 setInnerHtml('imagingStudySiteAbdoUltrasoundKFH', 'KH');
@@ -546,10 +553,11 @@ if(jQuery){
 				setInnerHtml('imagingStudiesAbdoUltrasoundOthersNonCoded', 'Others:');
 			setInnerHtml('imagingStudiesOtherAbdoUltrasoundText', ''+getValue('imagingStudiesAbdoUltrasoundOthersTextObs.value'));
 				
-			 if(getValue('imagingStudyCTScanAbdoPelvisObs.value')!=null) 
-			  setInnerHtml('imagingStudyCTScanAbdoPelvis', 'Done');
-		    if(getValue('dateOfImagingStudiesAbdoUltraObs.value')!=null)
-			  setInnerHtml('dateOfImagingStudiesAbdoUltraObs', ''+getValue('dateOfImagingStudiesAbdoUltraObs.value'));
+			 if(getValue('imagingStudyCTScanAbdoPelvisObs.value')!=null){
+			  setInnerHtml('imagingStudyCTScanAbdoPelvis', '<b>\u2713 </b>');
+			    var studyDate= $j.datepicker.formatDate('dd/M/yy',$j('#imagingStudyCTScanAbdoPelvisObs').find('.hasDatepicker').datepicker('getDate'));
+			    setInnerHtml('dateOfImagingStudyAbdoCTScanAbdoPelvis', 'Study Date: '+studyDate);
+			 }
 			 if(getValue('imagingStudySiteCTScanAbdoPelvisButaroObs.value')!=null)
 				setInnerHtml('imagingStudySiteCTScanAbdoPelvisButaro', 'Butaro');
 			if(getValue('imagingStudySiteCTScanAbdoPelvisKFHObs.value')!=null)
@@ -562,10 +570,11 @@ if(jQuery){
 				setInnerHtml('imagingStudiesCTScanAbdoPelvisOthersNonCoded', 'Others:');
 				setInnerHtml('imagingStudiesCTScanAbdoPelvisothersNonCodedText', ''+getValue('imagingStudiesCTScanAbdoPelvisothersNonCodedTextObs.value'));
 		
-	        if(getValue('imagingStudyCTScanChestObs.value')!=null) 
-			  setInnerHtml('imagingStudyCTScanChest', 'Done');
-		    if(getValue('dateOfImagingStudiesAbdoUltraObs.value')!=null)
-			  setInnerHtml('dateOfImagingStudiesAbdoUltraObs', ''+getValue('dateOfImagingStudiesAbdoUltraObs.value'));
+	        if(getValue('imagingStudyCTScanChestObs.value')!=null) {
+			  setInnerHtml('imagingStudyCTScanChest', '<b>\u2713 </b>');
+	          var studyDate= $j.datepicker.formatDate('dd/M/yy',$j('#imagingStudyCTScanChestObs').find('.hasDatepicker').datepicker('getDate'));
+		      setInnerHtml('dateOfImagingStudyCTScanChest', 'Study Date: '+studyDate);
+	        }
 			 if(getValue('imagingStudySiteCTScanChestButaroObs.value')!=null)
 				setInnerHtml('imagingStudySiteCTScanChestButaro', 'Butaro');
 			if(getValue('imagingStudySiteCTScanChestKFHObs.value')!=null)
@@ -578,10 +587,11 @@ if(jQuery){
 				setInnerHtml('imagingStudiesCTScanChestOthersNonCoded', 'Others:');
 				setInnerHtml('imagingStudiesCTScanChestothersNonCodedText', ''+getValue('imagingStudiesCTScanChestothersNonCodedTextObs.value'));
 		   
-		    if(getValue('otherImagingStudyNonCodedObs.value')!=null) 
-			  setInnerHtml('otherImagingStudyNonCoded', 'Done');
-		    if(getValue('dateOfotherImagingStudiesAbdoUltraObs.value')!=null)
-			  setInnerHtml('dateOfotherImagingStudiesAbdoUltraObs', ''+getValue('dateOfotherImagingStudiesAbdoUltraObs.value'));
+		    if(getValue('otherImagingStudyNonCodedObs.value')!=null) {
+			  setInnerHtml('otherImagingStudyNonCoded', '<b>\u2713 </b>');
+		      var studyDate= $j.datepicker.formatDate('dd/M/yy',$j('#otherImagingStudyNonCodedObs').find('.hasDatepicker').datepicker('getDate'));
+		      setInnerHtml('dateOfothersImagingStudies', 'Study Date: '+studyDate);
+		    }
 			 if(getValue('otherImagingStudySiteNonCodedButaroObs.value')!=null)
 				setInnerHtml('otherImagingStudySiteNonCodedButaro', 'Butaro');
 			if(getValue('otherImagingStudySiteNonCodedKFHObs.value')!=null)
@@ -878,7 +888,7 @@ if(jQuery){
 		
 		<tr class="diagnosisPrintArea">
 			<td class="lables">Chest X-Ray: <span id="imagingStudyChestXRay"></span></td>
-			<!-- <td class="lables">Date: <span id="dateOfImagingStudiesChest"></span></td> -->
+			 <td class="lables"><span id="dateOfImagingStudiesChest"></span></td> 
 			 <td class="lables" colspan="2">Site:
 			 <span id="imagingStudySiteofChestButaro"></span>
 			 <span id="imagingStudySiteofChestKFH"></span>
@@ -891,7 +901,7 @@ if(jQuery){
 		
 		<tr class="diagnosisPrintArea">
 			<td class="lables">Abdominal Ultrasound: <span id="imagingStudyAbdoUltrasound"></span></td>
-			<!-- <td class="lables">Date: <span id="dateOfImagingStudiesChest"></span></td> -->
+			 <td class="lables"><span id="dateOfImagingStudyAbdoUltrasound"></span></td> 
 			 <td class="lables" colspan="2">Site:
 			 <span id="imagingStudySiteAbdoUltrasoundButaro"></span>
 			 <span id="imagingStudySiteAbdoUltrasoundKFH"></span>
@@ -903,7 +913,7 @@ if(jQuery){
 		</tr>
 		 <tr class="diagnosisPrintArea">
 			<td class="lables">CT scan of Abdomen/Pelvis: <span id="imagingStudyCTScanAbdoPelvis"></span></td>
-			<!-- <td class="lables">Date: <span id="dateOfImagingStudiesAbdoUltraObs"></span></td> -->
+			 <td class="lables"><span id="dateOfImagingStudyAbdoCTScanAbdoPelvis"></span></td> 
 			 <td class="lables" colspan="2">Site:
 			 <span id="imagingStudySiteCTScanAbdoPelvisButaro"></span>
 			 <span id="imagingStudySiteCTScanAbdoPelvisKFH"></span>
@@ -915,7 +925,7 @@ if(jQuery){
 		</tr>
 		<tr class="diagnosisPrintArea">
 			<td class="lables">CT scan of Chest: <span id="imagingStudyCTScanChest"></span></td>
-			<!-- <td class="lables">Date: <span id="dateOfImagingStudiesAbdoUltraObs"></span></td> -->
+			 <td class="lables"><span id="dateOfImagingStudyCTScanChest"></span></td> 
 			 <td class="lables" colspan="2">Site:
 			 <span id="imagingStudySiteCTScanChestButaro"></span>
 			 <span id="imagingStudySiteCTScanChestKFH"></span>
@@ -927,8 +937,8 @@ if(jQuery){
 		</tr>
 		<tr class="diagnosisPrintArea">
 			<td class="lables">Other: <span id="otherImagingStudyNonCoded"></span></td>
-			<!-- <td class="lables">Date: <span id="dateOfotherImagingStudiesAbdoUltraObs"></span></td>
-			 --> <td class="lables" colspan="2">Site:
+			 <td class="lables"><span id="dateOfothersImagingStudies"></span></td>
+			  <td class="lables" colspan="2">Site:
 			 <span id="otherImagingStudySiteNonCodedButaro"></span>
 			 <span id="otherImagingStudySiteNonCodedKFH"></span>
 			 <span id="otherImagingStudySiteofNonCodedCHUK"></span>
@@ -1641,7 +1651,7 @@ if(jQuery){
 				<obs id="surgeryFacilityCHUKObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" style="checkbox" />
 				<obs id="surgeryFacilityCHUBObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" style="checkbox" />
 				<obs id="surgeryFacilityObsOthers" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="OTHERS" style="checkbox" />
-				<obs id="surgeryFacilityObsOthersText" conceptId="13c825f8-615a-429d-b813-ef9bdf8830ea" labelText="" />
+				<obs id="surgeryFacilityObsOthersText" conceptId="ee9b1c10-c3ba-4524-90eb-b3ece9de11f0" labelText="" />
 				</td>
 			</tr>
 			<tr class="spaceUnder">
