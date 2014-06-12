@@ -272,6 +272,13 @@ td {
     table.selectedCancerStagingKeys td {
         border: 0px;
     }
+    
+    #signature {
+    border: none;
+   }
+   #signature td {
+    border: none;
+   }
 }
 
 @media screen {
@@ -346,29 +353,8 @@ if(jQuery){
         $j(":checkbox").click(function(){
              $j(this).change();
      });
- }
-    var printableTables = ["breast"];
-	
-	var hideStagingKeys = function(elementsToHide) {
-		$j('.'+elementsToHide).slideToggle("fast");
-     };
-	
-    
-     //add a button to toggle staging keys
-	for (var i = 0; i &lt; printableTables.length; i++) {
-	    var lastRow=printableTables[i]+"CancerStagingKeys";
-	    
-	   $j('.'+lastRow+':last').after('<button style="color: #FFF; background-color: #BB2714;" type="button" id="'+lastRow+'">Click here to view or hide staging guidelines</button>');
-	   
-	   $j('#'+lastRow).click(function () {
-	    	hideStagingKeys(this.id);
-	    	}); 
-	    
-	    hideStagingKeys(lastRow); //Initialize the staging keys to hidden
-	    
-	}
-     
-    
+ }    
+     $j('[id^="breastCancerStagingKeys"]').hide();       
      
 	var getURLParam = function(name) {
 	    var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(document.URL);
@@ -401,22 +387,12 @@ if(jQuery){
  		else
  			return ifNotEmpReturn;
       };
-	
-     var hideOthers = function(elementToSkip) {
-    	 for (var i = 0; i &lt; printableTables.length; i++) {
- 		    var tableToHide=printableTables[i];
- 		    if(tableToHide != elementToSkip)
- 		       $j('#'+tableToHide).hide();     		    	
- 		}
-      };
       
-      var appendStagingKeys = function(elementToAppend) { 
-    	  if(typeof elementToAppend == null){
-    		  $j('.selectedCancerStagingKeys').empty();
-    		  return;
-    	  }
-    	  $j('.selectedCancerStagingKeys').empty();
-    	  $j('.'+elementToAppend).clone().appendTo('.selectedCancerStagingKeys');        	  
+      var appendStagingKeys = function() {     	  
+    	  $j('.selectedCancerStagingKeys').empty();   
+    	  for (var i = 1; i &lt; 6; i++) {
+    		  $j('#breastCancerStagingKeys'+i).clone().appendTo('.selectedCancerStagingKeys');  
+    	  }    	  
        };
        
        var getValueOfChildSpan = function(parentId) { 
@@ -444,7 +420,6 @@ if(jQuery){
 	    },
 	
 	 handleBreastCancerSection: function() { //handle Breast cancer section
-		 hideOthers('breast');
 
  		setInnerHtml("rightBreastMass", getValue('rightBreastMassObs.value'));
  		setInnerHtml("rightBreastMassSize1", getValue('rightBreastMassSize1Obs.value'));
@@ -579,7 +554,7 @@ if(jQuery){
  	if(getValue('breastStageCSMetastatic.value') !=null )
  		setInnerHtml('breastStageCS', 'Metastatic');
  	
- 	appendStagingKeys('breastCancerStagingKeys');
+	appendStagingKeys();
 	 },
 	 
 	 handlePathologySection: function() {//handle Pathology section	 
@@ -1491,27 +1466,28 @@ if(jQuery){
 	<br/>
 	<table id="signature">
 	
-		<tr class="diagnosisPrintArea">
-			<td class="lables">Specialists consulted on this case</td>
-			<td colspan="2" class="values"><span >Oncologist: </span> <span >Surgeon: </span>
-			</td>
+		<tr class="diagnosisPrintArea, spaceUnder">
+			<td class="lables">Specialists consulted on this case:</td>
+			<td class="values"><span ><input type="checkbox" name="" value="">Oncologist:___________________</input></span></td>
+			<td class="values"><span ><input type="checkbox" name="" value="">Surgeon:___________________</input><input type="checkbox" name="" value="">None</input></span></td>
+		</tr>
+		<tr class="diagnosisPrintArea, spaceUnder">
+			<td colspan="3" class="lables"><b>Staging and treatment plan confirmed by:</b></td>
 		</tr>
 		<tr class="diagnosisPrintArea">
-			<td class="lables">Staging and treatment plan confirmed by:</td>
-			<td colspan="2" class="values"><span></span>
-			</td>
-		</tr>
-		<tr class="diagnosisPrintArea">
-			<td colspan="3" class="values"><span>(Internist Name)</span><span>(Signature)</span><span>(dd)(mm)(yyy)</span>
-			</td>
+			<td class="values"><span>__________________________________<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(Internist Name)</span></td>
+			<td class="values"><span>__________________________________<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(Signature)</span></td>
+			<td class="values"><span>________/___________/_____________<br/>&#160;&#160;&#160;&#160;(dd)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(mm)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(yyy)</span></td>
 		</tr>
 	</table>
 	
 	<table class="selectedCancerStagingKeys">
-
-	</table>
-
+    </table>
+	
 </div>
+
+
+
 <div id="container">
 	<section>
 
@@ -2185,11 +2161,11 @@ if(jQuery){
 				<td></td>
 			</tr>
 			</obsgroup>
-			<tr class="breastCancerStagingKeys">
+			<tr id="breastCancerStagingKeys1">
 			<td colspan="6">
 			<b>*Overall Stage (AJCC 7 Edition Breast Cancer Staging):</b>
 			</td></tr>
-			<tr class="breastCancerStagingKeys">
+			<tr id="breastCancerStagingKeys2">
 				<td colspan="6"><span style="float: left;">
 						<h5>*T Staging</h5>
 						<ul>
@@ -2202,7 +2178,7 @@ if(jQuery){
 							<li>T4 Involvement of skin or chest wall</li>
 						</ul> </span> </td>
 			</tr>
-			<tr class="breastCancerStagingKeys">
+			<tr id="breastCancerStagingKeys3">
 				<td colspan="6"><span style="float: left;">
 						<h5>*Clinical N Staging</h5>
 						<ul>
@@ -2224,7 +2200,7 @@ lymph node metastases.</li>
 							<li>N3c No regional lymph node metastases</li>
 						</ul> </span> </td>
 			</tr>
-			<tr class="breastCancerStagingKeys">
+			<tr id="breastCancerStagingKeys4">
 				<td colspan="6"><span style="float: left;">
 						<h5>*M Staging</h5>
 						<ul>
@@ -2232,7 +2208,7 @@ lymph node metastases.</li>
 							<li>M1 Evidence of distant metastases (includes cervical adenopathy)</li>
 						</ul> </span> </td>
 			</tr>
-			<tr class="breastCancerStagingKeys">
+			<tr id="breastCancerStagingKeys5">
 				<td colspan="6"><span style="float: left;">
 						<h5>*Anatomic stage/prognostic groups</h5>
 						<ul>
@@ -2240,6 +2216,9 @@ lymph node metastases.</li>
 							<li>Stage I T1 N0 M0</li>
 							<li>Stage II T0 N1 M0, T1 N1 M0, T2 N0 M0, T2 N1 M0, T3 N0 M0</li>
 						</ul> </span> </td>
+			</tr>
+			<tr>
+			<td colspan="6"><button style="color: #FFF; background-color: #BB2714;" type="button" onclick="toggleStagingKeys();">Click here to view or hide staging guidelines</button></td>
 			</tr>
 		
 	</table>
@@ -2860,7 +2839,9 @@ lymph node metastases.</li>
 	<br />
 	<workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b"
 		stateId="09426655-2909-4f6f-938b-7a31b991075e" type="hidden" />
-	<submit />
+	 <submit />
+	 <br/>
+	 <encounterVoided/>
 </div>
 
  <script type="text/javascript">
@@ -2926,6 +2907,12 @@ lymph node metastases.</li>
 		
 	}
 </script> 
+<!-- Handle toggling staging keys -->
+<script type="text/javascript">
+function toggleStagingKeys() {
+	$j('[id^="breastCancerStagingKeys"]').slideToggle("fast");
+ }
+</script>
 <!-- Handle adding/removing chemotherapy sections --> <script type="text/javascript">
 function addChemo() {
     var trigger23_1 = $j('#trigger23_1').find("input[type$='checkbox']").is(':checked');
@@ -2992,4 +2979,4 @@ function addChemo() {
 			}
 		}
  	 
-       </script> </ifMode> <encounterVoided/> </htmlform>
+       </script> </ifMode> </htmlform>
