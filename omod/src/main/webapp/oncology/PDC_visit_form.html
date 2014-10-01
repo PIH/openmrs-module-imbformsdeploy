@@ -1,0 +1,457 @@
+<htmlform> <!--
+	   PDC Visit Form
+	   Visit Form 5July 2014_Marked for EMR 6Aug2014_HM.docx
+		Author:  
+		Builder: Bailly 
+		started on Sept 22, 2012		
+	--> <macros> @BIRTHWEIGHT_KG@=5916 </macros>
+<style>
+.formName {
+	background-color: #e0e0ff;
+}
+
+.section {
+	border: 1px solid #8FABC7;
+	width: 99%;
+	padding: 2px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.disabled {
+	color: #D8D8D8;
+}
+
+.sectionHeader {
+	background-color: #3333cc;
+	color: white;
+	display: block;
+	padding: 2px;
+	font-weight: bold;
+}
+
+table.symptoms th {
+	text-align: right;
+}
+
+th.subheader {
+	background-color: #8FABC7;
+	color: white
+}
+
+.note {
+	color: red;
+}
+
+td {
+	vertical-align: top;
+}
+
+table.labTable td {
+	color: red;
+}
+
+table.labTable
+		td.dateField {
+	text-align: right;
+}
+
+table.identifierTable td {
+	padding-right: 10px;
+}
+
+div.paddedTable span {
+	padding-right: 20px;
+}
+
+.indented {
+	padding-left: 20pt;
+	padding-right: 20pt;
+}
+
+.bigIndent {
+	padding-left: 40pt;
+	padding-right: 10pt;
+}
+
+.newpage {
+	color: #8FABC7;
+	font-weight: bold;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.disdiv {
+	background-color: white;
+}
+
+.hidden {
+	color: #D8D8D8;
+	width: 19%;
+}
+
+.text_container {
+	width: 29%;
+}
+</style>
+<script>
+	$j(function() {
+		$j('.disdiv').find('input').attr('disabled', 'true');
+	});
+</script> <script type="text/javascript">
+	if (jQuery) {
+		$j(document)
+				.ready(
+						function() {
+							if ($j.browser.msie) {
+								$j(":checkbox").click(function() {
+									$j(this).change();
+								});
+							}
+							$j(".checkboxGroup")
+									.each(
+											function() {
+												var group = $j(this);
+												var uncheckAll = function() {
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+												var uncheckRadioAndAll = function() {
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+
+												group
+														.find("#checkboxAll")
+														.find("input")
+														.click(
+																function() {
+																	var flip;
+																	var checked = $j(
+																			this)
+																			.siblings(
+																					":checkbox:first")
+																			.attr(
+																					"checked");
+																	if ($j(this)
+																			.attr(
+																					"name") == $j(
+																			this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox:first")
+																			.attr(
+																					"name")) {
+																		checked = $j(
+																				this)
+																				.attr(
+																						"checked");
+																		flip = checked;
+																	} else {
+																		flip = !checked;
+																	}
+																	if ($j(this)
+																			.attr(
+																					"type") == "text")
+																		if (flip == false)
+																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
+																	uncheckAll();
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.attr(
+																					"checked",
+																					flip);
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.change();
+																});
+
+												group
+														.find("#checkboxRadio")
+														.find(
+																"input[type$='checkbox']")
+														.click(
+																function() {
+																	uncheckAll();
+																	$j(this)
+																			.siblings(
+																					"input[type$='checkbox']")
+																			.attr(
+																					"checked",
+																					false);
+																	$j(this)
+																			.attr(
+																					"checked",
+																					true);
+																	$j(this)
+																			.change();
+																});
+
+												group
+														.find(
+																"#checkboxCheckbox")
+														.click(
+																function() {
+																	uncheckRadioAndAll();
+																});
+											});
+						});
+	}
+
+	$j(document).ready(function() {
+		getField('weight.value').change(function() {
+			var birthWeight = getValue("weight.value");
+			if (birthWeight != null) {
+				var bweight = calculateBirthWeight(birthWeight);
+				setValue('weight.value', bweight);
+			}
+		});
+	});
+
+	function calculateBirthWeight(birthWeight) {
+		var bsa;
+
+		bsa = (birthWeight * 0.001)
+
+		return bsa;
+	}
+
+	$j(document).ready(function() {
+
+		// Hide all DIVs until they are called!
+		$j("#Div1").hide();
+		$j("#Div2").hide();
+
+		$j("input#yes").click(function() {
+			$j("#Div1").show();
+			$j("#Div2").hide();
+			$j("span#checboxesAll input").attr('checked', 'checked');
+			$j("span#checboxesAllTwo input").removeAttr('checked');
+
+		});
+		$j("input#no").click(function() {
+			$j("#Div2").show();
+			$j("#Div1").hide();
+			$j("span#checboxesAllTwo input").attr('checked', 'checked');
+			$j("span#checboxesAll input").removeAttr('checked');
+		});
+	});
+	function Toggle(theDiv) {
+		document.getElementById("Div1").style.display = "none";
+		document.getElementById("Div2").style.display = "none";
+		document.getElementById(theDiv).style.display = "block";
+	}
+</script>
+<section>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td><b>IMB ID #: <lookup class="value"
+						expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+			</b></td>
+			<td>Date: <encounterDate default="today" /></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Last name/<span class="disabled">Nom: </span>
+			<lookup class="value" expression="patient.personName.familyName" /></td>
+			<td>First name/<span class="disabled">Prenom: </span>
+			<lookup class="value" expression="patient.personName.givenName" /></td>
+			<td>Gender: <lookup class="value" expression="patient.Gender" /></td>
+		</tr>
+		<tr>
+			<td><img
+				src="/openmrs/moduleResources/rwandareports/images/pihHands.png"
+				align="left" height="65"></img>
+				<h2>
+					&#160;&#160;Inshuti Mu Buzima <br /> &#160;&#160;PIH Rwanda
+				</h2></td>
+			<td><strong> Chronic Disease Clinic Visit Form –
+					Pediatric Developmental Clinic</strong></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Clinic or Hospital:</td>
+			<td><encounterLocation order="43" default="Rwinkwavu Hospital" /></td>
+			<td></td>
+		</tr>
+	</table>
+</section>
+<br />
+<table border="2" cellspacing="0" cellpadding="6" width="100%">
+	<tr>
+		<td>Have there been any demographic changes? (ex. contact
+			information)<br /> *If yes, complete the Change in Demographics form
+		</td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br />
+<table border="2" cellspacing="0" cellpadding="6" width="100%">
+	<tr>
+		<td colspan="2" align="center">Danger Signs</td>
+	</tr>
+	<tr>
+		<td rowspan="4" style="vertical-align:middle;">Danger Signs</td>
+		<td>
+			<table>
+				<tr>
+					<td><span>Does the patient have any of the following
+							danger signs?<br /> Problems breathing with chest indrawing,
+							rapid breathing, stridor<br /> Convulsions<br /> Lethargy or
+							unresponsiveness<br /> Umbilical cord redness<br /> Stiff neck
+							or bulging fontanelles<br />
+					</span> <span></span></td>
+				</tr>
+				<tr>
+					<td>If yes above, was:</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table>
+				<tr>
+					<td>Temperature: __________°C</td>
+				</tr>
+				<tr>
+					<td>Is temperature abnormal for age range?</td>
+				</tr>
+				<tr>
+					<td>If yes above, was:</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table>
+				<tr>
+					<td><span>Respiratory Rate: ___________ breaths /
+							minute</span><span style="float: right;">Normal Respiratory Rates for age:<br /> Infant
+							&lt; 2 months: &lt; 60 breaths per minute<br /> Infant 2-12
+							months: &lt; 50 breaths per minute<br /> Child 1-5 years: &lt; 40
+							breaths per minute<br />
+					</span></td>
+				</tr>
+				<tr>
+					<td>Is respiratory rate abnormal for age range?</td>
+				</tr>
+				<tr>
+					<td>If yes above, was:</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+<br />
+<table border="2" cellspacing="0" cellpadding="6" width="100%">
+	<tr>
+		<td colspan="2" align="center">Growth, Nutrition and Development</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<table border="2" cellspacing="0" cellpadding="6" width="100%">
+				<tr>
+					<td>Weight</td>
+					<td>Height/Length</td>
+					<td>Interval Growth</td>
+					<td>Head Circumference</td>
+					<td>Wt/Age Z-score</td>
+					<td>Height/Age Z-score</td>
+					<td>Wt/Ht Z-score</td>
+					<td>HC/Age Z-score</td>
+				</tr>
+				<tr>
+					<td>kg</td>
+					<td>cm</td>
+					<td align="center">☐no previous weight<br /> ☐adequate<br /> ☐inadequate<br />
+						☐N/A (>6mo)<br />
+					</td>
+					<td align="center">cm ☐N/A (>18mo)</td>
+					<td align="center">________<br/> ☐&gt; -2<br /> ☐&gt; -3<br /> AND &lt; -2<br /> ☐&lt;-3</td>
+					<td align="center">________<br/> ☐&gt; -2<br /> ☐&gt; -3<br /> AND &lt; 2<br /> ☐&lt;-3</td>
+					<td align="center">________<br/> ☐&gt; -2<br /> ☐&gt; -3<br /> AND &lt; -2<br /> ☐&lt;-3</td>
+					<td align="center">________<br/> ☐&gt; +3<br /> ☐&gt; -3<br /> AND &lt; +3<br /> ☐&lt;-3</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br />
+<table>
+	<tr>
+		<td>Signature: <encounterProvider role="Oncology Provider"
+				default="currentUser" /></td>
+	</tr>
+</table>
+<br />
+<submit /> <br />
+<br />
+<br />
+<br />
+</htmlform>
