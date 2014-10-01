@@ -96,195 +96,28 @@ table {
 	width: 29%;
 }
 </style>
-<script>
-	$j(function() {
-		$j('.disdiv').find('input').attr('disabled', 'true');
-	});
-</script> <script type="text/javascript">
-	if (jQuery) {
-		$j(document)
-				.ready(
-						function() {
-							if ($j.browser.msie) {
-								$j(":checkbox").click(function() {
-									$j(this).change();
-								});
-							}
-							$j(".checkboxGroup")
-									.each(
-											function() {
-												var group = $j(this);
-												var uncheckAll = function() {
-													group
-															.find(
-																	"input[type$='checkbox']")
-															.attr("checked",
-																	false);
-													group
-															.find(
-																	"input[type$='checkbox']")
-															.change();
-												}
-												var uncheckRadioAndAll = function() {
-													group
-															.find(
-																	"#checkboxAll,#checkboxRadio")
-															.find(
-																	"input[type$='checkbox']")
-															.attr("checked",
-																	false);
-													group
-															.find(
-																	"#checkboxAll,#checkboxRadio")
-															.find(
-																	"input[type$='checkbox']")
-															.change();
-												}
 
-												group
-														.find("#checkboxAll")
-														.find("input")
-														.click(
-																function() {
-																	var flip;
-																	var checked = $j(
-																			this)
-																			.siblings(
-																					":checkbox:first")
-																			.attr(
-																					"checked");
-																	if ($j(this)
-																			.attr(
-																					"name") == $j(
-																			this)
-																			.parents(
-																					"#checkboxAll:first")
-																			.find(
-																					":checkbox:first")
-																			.attr(
-																					"name")) {
-																		checked = $j(
-																				this)
-																				.attr(
-																						"checked");
-																		flip = checked;
-																	} else {
-																		flip = !checked;
-																	}
-																	if ($j(this)
-																			.attr(
-																					"type") == "text")
-																		if (flip == false)
-																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
-																	uncheckAll();
-																	$j(this)
-																			.parents(
-																					"#checkboxAll:first")
-																			.find(
-																					":checkbox")
-																			.attr(
-																					"checked",
-																					flip);
-																	$j(this)
-																			.parents(
-																					"#checkboxAll:first")
-																			.find(
-																					":checkbox")
-																			.change();
-																});
-
-												group
-														.find("#checkboxRadio")
-														.find(
-																"input[type$='checkbox']")
-														.click(
-																function() {
-																	uncheckAll();
-																	$j(this)
-																			.siblings(
-																					"input[type$='checkbox']")
-																			.attr(
-																					"checked",
-																					false);
-																	$j(this)
-																			.attr(
-																					"checked",
-																					true);
-																	$j(this)
-																			.change();
-																});
-
-												group
-														.find(
-																"#checkboxCheckbox")
-														.click(
-																function() {
-																	uncheckRadioAndAll();
-																});
-											});
-						});
-	}
-
-	$j(document).ready(function() {
-		getField('weight.value').change(function() {
-			var birthWeight = getValue("weight.value");
-			if (birthWeight != null) {
-				var bweight = calculateBirthWeight(birthWeight);
-				setValue('weight.value', bweight);
-			}
-		});
-	});
-
-	function calculateBirthWeight(birthWeight) {
-		var bsa;
-
-		bsa = (birthWeight * 0.001)
-
-		return bsa;
-	}
-
-	$j(document).ready(function() {
-
-		// Hide all DIVs until they are called!
-		$j("#Div1").hide();
-		$j("#Div2").hide();
-
-		$j("input#yes").click(function() {
-			$j("#Div1").show();
-			$j("#Div2").hide();
-			$j("span#checboxesAll input").attr('checked', 'checked');
-			$j("span#checboxesAllTwo input").removeAttr('checked');
-
-		});
-		$j("input#no").click(function() {
-			$j("#Div2").show();
-			$j("#Div1").hide();
-			$j("span#checboxesAllTwo input").attr('checked', 'checked');
-			$j("span#checboxesAll input").removeAttr('checked');
-		});
-	});
-	function Toggle(theDiv) {
-		document.getElementById("Div1").style.display = "none";
-		document.getElementById("Div2").style.display = "none";
-		document.getElementById(theDiv).style.display = "block";
-	}
-</script>
 <section>
 
 	<table border="2" cellspacing="0" cellpadding="6" width="100%">
 		<tr>
-			<td><b>IMB ID #: <lookup class="value"
+			<td style="background-color: #FFFF00"><b>IMB ID #: <lookup
+						class="value"
 						expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
 			</b></td>
-			<td>Date: <encounterDate default="today" /></td>
-			<td></td>
+			<td style="background-color: #FFFF00">Date: <encounterDate
+					default="today" /></td>
+			<td style="background-color: #FFFF00"></td>
 		</tr>
 		<tr>
-			<td>Last name/<span class="disabled">Nom: </span>
-			<lookup class="value" expression="patient.personName.familyName" /></td>
-			<td>First name/<span class="disabled">Prenom: </span>
-			<lookup class="value" expression="patient.personName.givenName" /></td>
-			<td>Gender: <lookup class="value" expression="patient.Gender" /></td>
+			<td style="background-color: #FFFF00">Last name/<span
+				class="disabled">Nom: </span> <lookup class="value"
+					expression="patient.personName.familyName" /></td>
+			<td style="background-color: #FFFF00">First name/<span
+				class="disabled">Prenom: </span> <lookup class="value"
+					expression="patient.personName.givenName" /></td>
+			<td style="background-color: #FFFF00">Gender: <lookup
+					class="value" expression="patient.Gender" /></td>
 		</tr>
 		<tr>
 			<td><img
@@ -297,7 +130,7 @@ table {
 					Pediatric Developmental Clinic</strong></td>
 			<td></td>
 		</tr>
-		<tr style="background-color:#FFFF00">
+		<tr style="background-color: #FFFF00">
 			<td>Clinic or Hospital:</td>
 			<td><encounterLocation order="43" default="Rwinkwavu Hospital" /></td>
 			<td></td>
@@ -309,18 +142,18 @@ table {
 	<tr>
 		<td>Have there been any demographic changes? (ex. contact
 			information)<br /> *If yes, complete the Change in Demographics form
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;☐
+			Yes &#160;&#160;&#160;&#160; ☐ No
 		</td>
-		<td></td>
-		<td></td>
 	</tr>
 </table>
 <br />
 <table border="2" cellspacing="0" cellpadding="6" width="100%">
-	<tr style="background-color:#929292;">
+	<tr style="background-color: #929292;">
 		<td colspan="2" align="center">Danger Signs</td>
 	</tr>
 	<tr>
-		<td rowspan="4" style="vertical-align:middle;">Danger Signs</td>
+		<td rowspan="4" style="vertical-align: middle;">Danger Signs</td>
 		<td>
 			<table>
 				<tr>
@@ -357,10 +190,10 @@ table {
 			<table>
 				<tr>
 					<td><span>Respiratory Rate: ___________ breaths /
-							minute</span><span style="float: right;">Normal Respiratory Rates for age:<br /> Infant
-							&lt; 2 months: &lt; 60 breaths per minute<br /> Infant 2-12
-							months: &lt; 50 breaths per minute<br /> Child 1-5 years: &lt; 40
-							breaths per minute<br />
+							minute</span><span style="float: right;">Normal Respiratory Rates
+							for age:<br /> Infant &lt; 2 months: &lt; 60 breaths per minute<br />
+							Infant 2-12 months: &lt; 50 breaths per minute<br /> Child 1-5
+							years: &lt; 40 breaths per minute<br />
 					</span></td>
 				</tr>
 				<tr>
@@ -378,7 +211,7 @@ table {
 </table>
 <br />
 <table border="2" cellspacing="0" cellpadding="6" width="100%">
-	<tr style="background-color:#929292;">
+	<tr style="background-color: #929292;">
 		<td colspan="2" align="center">Growth, Nutrition and Development</td>
 	</tr>
 	<tr>
@@ -397,14 +230,22 @@ table {
 				<tr>
 					<td>kg</td>
 					<td>cm</td>
-					<td align="center">☐no previous weight<br /> ☐adequate<br /> ☐inadequate<br />
-						☐N/A (>6mo)<br />
+					<td align="center">☐no previous weight<br /> ☐adequate<br />
+						☐inadequate<br /> ☐N/A (>6mo)<br />
 					</td>
 					<td align="center">cm ☐N/A (>18mo)</td>
-					<td align="center">________<br/> ☐&gt; -2<br /> ☐&gt; -3<br /> AND &lt; -2<br /> ☐&lt;-3</td>
-					<td align="center">________<br/> ☐&gt; -2<br /> ☐&gt; -3<br /> AND &lt; 2<br /> ☐&lt;-3</td>
-					<td align="center">________<br/> ☐&gt; -2<br /> ☐&gt; -3<br /> AND &lt; -2<br /> ☐&lt;-3</td>
-					<td align="center">________<br/> ☐&gt; +3<br /> ☐&gt; -3<br /> AND &lt; +3<br /> ☐&lt;-3</td>
+					<td align="center">________<br /> ☐&gt; -2<br /> ☐&gt; -3<br />
+						AND &lt; -2<br /> ☐&lt;-3
+					</td>
+					<td align="center">________<br /> ☐&gt; -2<br /> ☐&gt; -3<br />
+						AND &lt; 2<br /> ☐&lt;-3
+					</td>
+					<td align="center">________<br /> ☐&gt; -2<br /> ☐&gt; -3<br />
+						AND &lt; -2<br /> ☐&lt;-3
+					</td>
+					<td align="center">________<br /> ☐&gt; +3<br /> ☐&gt; -3<br />
+						AND &lt; +3<br /> ☐&lt;-3
+					</td>
 				</tr>
 			</table>
 		</td>
@@ -414,56 +255,69 @@ table {
 		<td>_____________________(days/weeks/months/years)</td>
 	</tr>
 	<tr>
-		<td>Corrected Age (if GA <br/>
-&gt;37 weeks and &gt;2 <br/>
-years old) 
+		<td>Corrected Age (if GA <br /> &gt;37 weeks and &gt;2 <br />
+			years old)
 		</td>
-		<td>_____________________(weeks) *Note: If possible, use this age for determining z-scores above
-☐ N/A
-☐ No Info
+		<td>_____________________(weeks) *Note: If possible, use this age
+			for determining z-scores above ☐ N/A ☐ No Info</td>
+	</tr>
+	<tr>
+		<td>Traditional Medicine</td>
+		<td>Has the patient received any traditional
+			medications/treatments? ☐ Yes___________________________________☐ No
 		</td>
 	</tr>
 	<tr>
-		<td>Traditional Medicine 
-		</td>
-		<td>Has the patient received any traditional medications/treatments?   ☐ Yes___________________________________☐ No
-		</td>
+		<td>Vaccination Status</td>
+		<td>☐ Complete: ☐ Unknown: ☐ Vaccines
+			needed:________________________________________________________________________________________</td>
 	</tr>
 	<tr>
-		<td>Vaccination Status 
-		</td>
-		<td>☐ Complete:     ☐ Unknown:      ☐ Vaccines needed:________________________________________________________________________________________</td>
-	</tr>
-	<tr>
-		<td style="vertical-align:middle;">Development
-		</td>
+		<td style="vertical-align: middle;">Development</td>
 		<td>
-		<table>
+			<table>
 				<tr>
-					<td>ASQ Scores by Domain:<br/>
-					Age used: ☐ 6 months ☐ 12 months ☐ 18 months ☐ 24 months ☐ 36 months ☐ 48 months ☐ 60 months ☐ N/A (no ASQ needed during visit)
+					<td>ASQ Scores by Domain:<br /> Age used: ☐ 6 months ☐ 12
+						months ☐ 18 months ☐ 24 months ☐ 36 months ☐ 48 months ☐ 60 months
+						☐ N/A (no ASQ needed during visit)
 					</td>
 				</tr>
 				<tr>
 					<td><br /> <br />
-					<table style="background-color:#00FF00;" cellspacing="0" cellpadding="6">
-					<tr>
-					<td> Communication:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</td>  <td>☐ normal (white) &#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ abnormal (gray/black)</td>
-                    </tr>
-                    <tr>
-					<td> Large Muscle Movements:</td>  <td>☐normal (white)&#160;&#160;&#160;&#160;&#160;&#160;&#160;  ☐ abnormal (gray/black)</td>
-					</tr>
-					<tr>
-					<td> Small Muscle Movements:</td>  <td>☐normal (white)&#160;&#160;&#160;&#160;&#160;&#160;&#160;  ☐ abnormal (gray/black)</td>
-					</tr>
-					<tr>
-					<td> Problem Solving: </td>        <td>☐normal (white)&#160;&#160;&#160;&#160;&#160;&#160;&#160;  ☐ abnormal (gray/black)</td>
-                    </tr>
-                    <tr>
-					<td> Personal - Social: </td>      <td>☐normal (white)&#160;&#160;&#160;&#160;&#160;&#160;&#160;  ☐ abnormal (gray/black)</td>
-					 </tr>
-					</table>
-						</td>
+						<table style="background-color: #00FF00;" cellspacing="0"
+							cellpadding="6">
+							<tr>
+								<td>
+									Communication:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</td>
+								<td>☐ normal (white)
+									&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ abnormal
+									(gray/black)</td>
+							</tr>
+							<tr>
+								<td>Large Muscle Movements:</td>
+								<td>☐normal
+									(white)&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ abnormal
+									(gray/black)</td>
+							</tr>
+							<tr>
+								<td>Small Muscle Movements:</td>
+								<td>☐normal
+									(white)&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ abnormal
+									(gray/black)</td>
+							</tr>
+							<tr>
+								<td>Problem Solving:</td>
+								<td>☐normal
+									(white)&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ abnormal
+									(gray/black)</td>
+							</tr>
+							<tr>
+								<td>Personal - Social:</td>
+								<td>☐normal
+									(white)&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ abnormal
+									(gray/black)</td>
+							</tr>
+						</table></td>
 				</tr>
 				<tr>
 					<td>Developmental counseling provided:
@@ -472,41 +326,47 @@ years old)
 						N/A</td>
 				</tr>
 				<tr>
-					<td style="background-color:#00FF00">Has caregiver received at least one ECD education session? ☐ yes&#160;&#160;&#160;&#160;☐ no</td>
+					<td style="background-color: #00FF00">Has caregiver received
+						at least one ECD education session? ☐ yes&#160;&#160;&#160;&#160;☐
+						no</td>
 				</tr>
 				<tr>
-					<td>How many play things does child have? ☐ 0&#160;&#160;&#160;&#160;☐ 1&#160;&#160;&#160;&#160;☐ +2</td>
+					<td>How many play things does child have? ☐
+						0&#160;&#160;&#160;&#160;☐ 1&#160;&#160;&#160;&#160;☐ +2</td>
 				</tr>
 				<tr>
-					<td>
-					For children aged (36-59 months only) how many times has caregiver engaged in an activity to play or teach child directly in the past 3 days?<br/>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;☐ 0&#160;&#160;&#160;&#160;☐ 1&#160;&#160;&#160;&#160;☐ 2&#160;&#160;&#160;&#160;☐ 3&#160;&#160;&#160;&#160;☐ +4
+					<td>For children aged (36-59 months only) how many times has
+						caregiver engaged in an activity to play or teach child directly
+						in the past 3 days?<br />
+						&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;☐
+						0&#160;&#160;&#160;&#160;☐ 1&#160;&#160;&#160;&#160;☐
+						2&#160;&#160;&#160;&#160;☐ 3&#160;&#160;&#160;&#160;☐ +4
 					</td>
 				</tr>
 			</table>
 		</td>
 	</tr>
 	<tr>
-		<td>Feeding Difficulty
-		</td>
+		<td>Feeding Difficulty</td>
 		<td>
-		<table>
+			<table>
 				<tr>
-					<td>Does the child have a feeding difficulty? &#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ Yes &#160;&#160;&#160;☐ No  &#160;&#160;&#160;&#160;&#160;&#160;&#160;If yes, please specify problem: ___________________________________________
-					
-					</td>
+					<td>Does the child have a feeding difficulty?
+						&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ Yes
+						&#160;&#160;&#160;☐ No
+						&#160;&#160;&#160;&#160;&#160;&#160;&#160;If yes, please specify
+						problem: ___________________________________________</td>
 				</tr>
 				<tr>
-					<td>
-					Intervention: ______________________________
-					</td>
+					<td>Intervention: ______________________________</td>
 				</tr>
 			</table>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="2">
-			<table style="background-color:#00FF00" cellspacing="0" cellpadding="6" width="100%">
+			<table style="background-color: #00FF00" cellspacing="0"
+				cellpadding="6" width="100%">
 				<tr>
 					<td colspan="3">Socio-economic Assistance:</td>
 				</tr>
@@ -516,22 +376,22 @@ years old)
 					<td>☐ No Social Supports Recommended</td>
 				</tr>
 				<tr>
-					<td>☐ Food package (patient or caregiver) </td>
-					<td>☐ Food package (patient or caregiver) </td>
-					<td> </td>
+					<td>☐ Food package (patient or caregiver)</td>
+					<td>☐ Food package (patient or caregiver)</td>
+					<td></td>
 				</tr>
 				<tr>
-					<td>☐ Transport </td>
+					<td>☐ Transport</td>
 					<td>☐ Transport</td>
 					<td></td>
 				</tr>
 				<tr>
-					<td>☐ CHW Home Visits </td>
+					<td>☐ CHW Home Visits</td>
 					<td>☐ CHW Home Visits</td>
 					<td>☐ Social Work Assessment Not Done</td>
 				</tr>
 				<tr>
-					<td>☐ Artificial Milk </td>
+					<td>☐ Artificial Milk</td>
 					<td>☐ Artificial Milk</td>
 					<td></td>
 				</tr>
@@ -545,26 +405,34 @@ years old)
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2">Areas of Concern for Next Appointment / Additional Comments:</td>
+		<td colspan="2">Areas of Concern for Next Appointment /
+			Additional Comments:</td>
 	</tr>
 </table>
 <br />
-<table style="background-color:#FFFF00" border="2" cellspacing="0" cellpadding="6" width="100%">
-  <tr style="background-color:#929292;">
-    <td align="center">Disposition</td>
-  </tr>
-  <tr>
-    <td>Follow-up needed:&#160;&#160;&#160;&#160;&#160;&#160;&#160;  ☐ Yes_____________________________________date) &#160;&#160;&#160;&#160;&#160;&#160;&#160;          ☐ No</td>
-  </tr>
-  <tr>
-    <td>If no: <br/><br/>☐ Discharge:&#160;&#160;&#160;&#160;&#160;&#160;&#160;    ☐ met condition-specific criteria&#160;&#160;&#160;&#160;&#160;&#160;&#160;          ☐&gt;5 years of age</td>
-  </tr>
-  <tr>
-    <td>☐ Transfer:______________________________________</td>
-  </tr>
-  <tr>
-    <td>☐ Died</td>
-  </tr>
+<table style="background-color: #FFFF00" border="2" cellspacing="0"
+	cellpadding="6" width="100%">
+	<tr style="background-color: #929292;">
+		<td align="center">Disposition</td>
+	</tr>
+	<tr>
+		<td>Follow-up needed:&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐
+			Yes_____________________________________date)
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ No</td>
+	</tr>
+	<tr>
+		<td>If no: <br />
+		<br />☐ Discharge:&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ met
+			condition-specific criteria&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			☐&gt;5 years of age
+		</td>
+	</tr>
+	<tr>
+		<td>☐ Transfer:______________________________________</td>
+	</tr>
+	<tr>
+		<td>☐ Died</td>
+	</tr>
 </table>
 
 <br />
