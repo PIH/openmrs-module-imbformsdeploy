@@ -2,9 +2,18 @@
 	   PDC Visit Form
 	   Visit Form 5July 2014_Marked for EMR 6Aug2014_HM.docx
 		Author:  
-		Builder: Bailly 
+		Builder: Bailly RURANGIRWA
 		started on Sept 22, 2012		
-	--> <macros> @BIRTHWEIGHT_KG@=5916 </macros>
+	--> 
+	
+	<macros> 	
+	@DEMOGRAPHIC_CHANGES@=92be5903-2956-4c35-9b0b-cb428dfb7084
+	@YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
+    @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
+    
+    
+     </macros>
+	
 <style>
 .formName {
 	background-color: #e0e0ff;
@@ -142,8 +151,8 @@ table {
 	<tr>
 		<td>Have there been any demographic changes? (ex. contact
 			information)<br /> *If yes, complete the Change in Demographics form
-			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;☐
-			Yes &#160;&#160;&#160;&#160; ☐ No
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			<obs id="changeInDemographicsYes" conceptId="$@DEMOGRAPHIC_CHANGES@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="changeInDemographicsNo" conceptId="$@DEMOGRAPHIC_CHANGES@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
 		</td>
 	</tr>
 </table>
