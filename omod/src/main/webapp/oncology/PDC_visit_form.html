@@ -23,6 +23,7 @@
     @PDC_TEMPERATURE_DANGER_SIGNS_CONSTRUCT@=9d6782db-2a24-4894-8c9a-b5180ed984d6
     @PDC_RESPIRATORY_RATE_DANGER_SIGNS_CONSTRUCT@=fa72be31-0bd8-4367-ae12-fc873164dae0
     @PDC_OTHER_DANGER_SIGNS_CONSTRUCT@=addf0593-74ae-4ece-b1dc-ea90b2d79e5a
+    @PDC_DANGER_SIGNS_ACTION_TAKEN@=74b1d6c6-09e9-4af2-96b9-6f09d600e0cd
      </macros>
 	
 <style>
@@ -175,19 +176,64 @@ table {
 	<tr>
 		<td rowspan="4" style="vertical-align: middle;">Danger Signs</td>
 		<td>
+		<obsgroup groupingConceptId="addf0593-74ae-4ece-b1dc-ea90b2d79e5a">
 			<table>
-				<tr>
-					<td><span>Does the patient have any of the following
-							danger signs?<br /> Problems breathing with chest indrawing,
-							rapid breathing, stridor<br /> Convulsions<br /> Lethargy or
-							unresponsiveness<br /> Umbilical cord redness<br /> Stiff neck
-							or bulging fontanelles<br />
-					</span> <span></span></td>
+			<tr>
+					<td>Does the patient have any of the following danger signs?</td>
+					<td></td>
 				</tr>
 				<tr>
-					<td>If yes above, was:</td>
+					<td>Problems breathing with chest indrawing, rapid breathing, stridor</td>
+					<td>
+					<obs id="breathingDangerSignsPresentYes" conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="breathingDangerSignsPresentNo" conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+					</td>
+				</tr>
+				<tr>
+					<td>Convulsions</td>
+					<td>
+					<obs id="convulsionsDangerSignsPresentYes" conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="convulsionsDangerSignsPresentNo" conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+					</td>
+				</tr>
+				<tr>
+					<td>Lethargy or unresponsiveness</td>
+					<td>
+					<obs id="lethargyDangerSignsPresentYes" conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="lethargyDangerSignsPresentNo" conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+					</td>
+				</tr>
+				<tr>
+					<td>Umbilical cord redness</td>
+					<td>
+					<obs id="umbilicalDangerSignsPresentYes" conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="umbilicalDangerSignsPresentNo" conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+					</td>
+				</tr>
+				<tr>
+					<td>Stiff neck or bulging fontanelles</td>
+					<td>
+					<obs id="stiffNeckDangerSignsPresentYes" conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="stiffNeckDangerSignsPresentNo" conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><br/>If yes above, was:
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="actionTakenPatientReferredToDH" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="patient referred to DH" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="actionTakenPatientReferredToIMCI" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="patient referred to IMCI" style="checkbox" />
+					</td>
 				</tr>
 			</table>
+		</obsgroup>
 		</td>
 	</tr>
 	<tr>
