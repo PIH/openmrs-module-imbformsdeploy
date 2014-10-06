@@ -28,6 +28,16 @@
     @PDC_DANGER_SIGNS_ACTION_TAKEN@=74b1d6c6-09e9-4af2-96b9-6f09d600e0cd
     @WEIGHT@=3ce93b62-26fe-102b-80cb-0017a47871b2
     @HEIGHT@=3ce93cf2-26fe-102b-80cb-0017a47871b2
+    
+    @SIX_MONTHS@=dcef7400-6a7c-428c-8706-1036bc251ba3
+    @TWELVE_MONTHS@=0018c8d6-1b6f-41e3-b949-c29f29075dff
+    @EIGHTEEN_MONTHS@=29db0b5a-28d9-4614-bd14-efd847a2cffb
+    @TWENTY_FOUR_MONTHS@=d09b8301-606c-4939-b66a-f5b12a160a67
+    @THIRTY_SIX_MONTHS@=da999e0b-19eb-4de9-81a1-13fc74e6a9c8
+    @FORTY_EIGHT_MONTHS@=e1651346-24ac-4f37-b6c4-a176e7bbc4a2
+    @SIXTY_MONTHS@=dcef7400-6a7c-428c-8706-1036bc251ba3
+    @NOT_APPLICABLE@=3cd7b72a-26fe-102b-80cb-0017a47871b2
+    @AGE_USED@=1fca6d51-255f-493d-a281-7521b384a623
      </macros>
 	
 <style>
@@ -378,10 +388,24 @@ table {
 		<td style="vertical-align: middle;">Development</td>
 		<td>
 			<table>
-				<tr>
-					<td>ASQ Scores by Domain:<br /> Age used: ☐ 6 months ☐ 12
-						months ☐ 18 months ☐ 24 months ☐ 36 months ☐ 48 months ☐ 60 months
-						☐ N/A (no ASQ needed during visit)
+				<tr style="background-color: #00FF00;">
+					<td>ASQ Scores by Domain:<br /> Age used:
+					&#160;
+					<obs id="ageUsedSixMonths" conceptId="$@AGE_USED@" answerConceptId="$@SIX_MONTHS@" answerLabel="6 months" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="ageUsedTwelveMonths" conceptId="$@AGE_USED@" answerConceptId="$@TWELVE_MONTHS@" answerLabel="12 months" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="ageUsedEighteenMonths" conceptId="$@AGE_USED@" answerConceptId="$@EIGHTEEN_MONTHS@" answerLabel="18 months" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="ageUsedTwentyFourMonths" conceptId="$@AGE_USED@" answerConceptId="$@TWENTY_FOUR_MONTHS@" answerLabel="24 months" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="ageUsedThirtySixMonths" conceptId="$@AGE_USED@" answerConceptId="$@THIRTY_SIX_MONTHS@" answerLabel="36 months" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="ageUsedFortyEightMonths" conceptId="$@AGE_USED@" answerConceptId="$@FORTY_EIGHT_MONTHS@" answerLabel="48 months" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="ageUsedSixtyMonths" conceptId="$@AGE_USED@" answerConceptId="$@SIXTY_MONTHS@" answerLabel="60 months" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="ageUsedNotApplicable" conceptId="$@AGE_USED@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A (no ASQ needed during visit)" style="checkbox" />
 					</td>
 				</tr>
 				<tr>
