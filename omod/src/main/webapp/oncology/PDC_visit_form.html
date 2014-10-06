@@ -11,6 +11,7 @@
 	@YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
     @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
     @TEMPERATURE@=3ce939d2-26fe-102b-80cb-0017a47871b2
+    @RESPIRATORY_RATE@=3ceb11f8-26fe-102b-80cb-0017a47871b2
     @ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@=ab596279-01ad-48dc-9b3d-08ca0dd226ef
     @ABNORMAL_RESPIRATORY_RATE_FOR_AGE_RANGE@=3ae0433c-cacc-4cf0-ba94-212f5d4ad748
     @PHYSICIAN_NOTIFIED@=39f4d3d3-ef24-450c-beed-61a9fcdeb4c6
@@ -25,6 +26,8 @@
     @PDC_RESPIRATORY_RATE_DANGER_SIGNS_CONSTRUCT@=fa72be31-0bd8-4367-ae12-fc873164dae0
     @PDC_OTHER_DANGER_SIGNS_CONSTRUCT@=addf0593-74ae-4ece-b1dc-ea90b2d79e5a
     @PDC_DANGER_SIGNS_ACTION_TAKEN@=74b1d6c6-09e9-4af2-96b9-6f09d600e0cd
+    @WEIGHT@=3ce93b62-26fe-102b-80cb-0017a47871b2
+    @HEIGHT@=3ce93cf2-26fe-102b-80cb-0017a47871b2
      </macros>
 	
 <style>
@@ -243,7 +246,7 @@ table {
 			<table>
 				<tr>
 					<td>Temperature:<obs conceptId="$@TEMPERATURE@" labelText="" />°C</td>
-					<td align="center">Normal Temperature for age:<br/>
+					<td align="left">Normal Temperature for age:<br/>
                          *Infant &lt;2 months: between 35.5 and 37.5°C.<br/>
                          *Age 2-59 months: ≤ 37.5 °C <br/><br/> <br/>                       
 					</td>
@@ -253,7 +256,7 @@ table {
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 					<obs id="abnormalTemperatureYes" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-					<obs id="abnormalTemperatureYes" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+					<obs id="abnormalTemperatureNo" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 					</td>
 				</tr>
@@ -275,18 +278,31 @@ table {
 		<td>
 			<table>
 				<tr>
-					<td><span>Respiratory Rate: ___________ breaths /
-							minute</span><span style="float: right;">Normal Respiratory Rates
-							for age:<br /> Infant &lt; 2 months: &lt; 60 breaths per minute<br />
-							Infant 2-12 months: &lt; 50 breaths per minute<br /> Child 1-5
-							years: &lt; 40 breaths per minute<br />
-					</span></td>
+					<td>Respiratory Rate:<obs conceptId="$@RESPIRATORY_RATE@" labelText="" />°C</td>
+					<td align="left">Normal Respiratory Rates for age:<br/>
+                         *Infant &lt;2 months:  &lt;60 breaths per minute<br/>
+                         *Infant 2-12 months:  &lt;50 breaths per minute<br/>
+                         *Child 1-5 years: &lt; 40 breaths per minute <br/><br/> <br/>                       
+					</td>
 				</tr>
 				<tr>
-					<td>Is respiratory rate abnormal for age range?</td>
+					<td colspan="2">Is respiratory rate abnormal for age range?
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="abnormalRespiratoryRateYes" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="abnormalRespiratoryRateNo" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					</td>
 				</tr>
 				<tr>
-					<td>If yes above, was:</td>
+					<td colspan="2"><br/>If yes above, was:
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="actionTakenPatientReferredToDH" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="patient referred to DH" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="actionTakenPatientReferredToIMCI" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="patient referred to IMCI" style="checkbox" />
+					</td>
 				</tr>
 			</table>
 		</td>
@@ -314,8 +330,8 @@ table {
 					<td>HC/Age Z-score</td>
 				</tr>
 				<tr>
-					<td>kg</td>
-					<td>cm</td>
+					<td><obs conceptId="$@WEIGHT@" labelText="" />kg</td>
+					<td><obs conceptId="$@HEIGHT@" labelText="" />cm</td>
 					<td style="background-color: #00FF00;" align="center">☐no previous weight<br /> ☐adequate<br />
 						☐inadequate<br /> ☐N/A (>6mo)<br />
 					</td>
