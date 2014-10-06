@@ -10,6 +10,7 @@
 	@DEMOGRAPHIC_CHANGES@=92be5903-2956-4c35-9b0b-cb428dfb7084
 	@YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
     @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
+    @TEMPERATURE@=3ce939d2-26fe-102b-80cb-0017a47871b2
     @ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@=ab596279-01ad-48dc-9b3d-08ca0dd226ef
     @ABNORMAL_RESPIRATORY_RATE_FOR_AGE_RANGE@=3ae0433c-cacc-4cf0-ba94-212f5d4ad748
     @PHYSICIAN_NOTIFIED@=39f4d3d3-ef24-450c-beed-61a9fcdeb4c6
@@ -238,17 +239,36 @@ table {
 	</tr>
 	<tr>
 		<td>
+		<obsgroup groupingConceptId="9d6782db-2a24-4894-8c9a-b5180ed984d6">
 			<table>
 				<tr>
-					<td>Temperature: __________°C</td>
+					<td>Temperature:<obs conceptId="$@TEMPERATURE@" labelText="" />°C</td>
+					<td align="center">Normal Temperature for age:<br/>
+                         *Infant &lt;2 months: between 35.5 and 37.5°C.<br/>
+                         *Age 2-59 months: ≤ 37.5 °C <br/><br/> <br/>                       
+					</td>
 				</tr>
 				<tr>
-					<td>Is temperature abnormal for age range?</td>
+					<td colspan="2">Is temperature abnormal for age range?
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="abnormalTemperatureYes" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="abnormalTemperatureYes" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					</td>
 				</tr>
 				<tr>
-					<td>If yes above, was:</td>
+					<td colspan="2"><br/>If yes above, was:
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="actionTakenPatientReferredToDH" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="patient referred to DH" style="checkbox" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="actionTakenPatientReferredToIMCI" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="patient referred to IMCI" style="checkbox" />
+					</td>
 				</tr>
 			</table>
+			</obsgroup>
 		</td>
 	</tr>
 	<tr>
