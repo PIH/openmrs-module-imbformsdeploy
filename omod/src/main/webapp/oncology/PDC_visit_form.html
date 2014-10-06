@@ -47,6 +47,18 @@
     @PROBLEM_SOLVING@=b53ff26a-515c-4a7c-bebe-b80c594e6d4c
     @PERSONAL_SOCIAL@=fda3b1a8-7e8f-4ae9-973a-f8c41713c595
     @RECEIVED_AT_LEAST_ONE_ECD_EDUCATION_SESSION@=082c3027-9875-4b1f-8d11-49640f096107
+    
+    @SOCIO_ECONOMIC_ASSISTANCE@=3cda0462-26fe-102b-80cb-0017a47871b2
+    @SOCIO_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@=3ce169b4-26fe-102b-80cb-0017a47871b2
+    @SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@=3ce16b30-26fe-102b-80cb-0017a47871b2
+    @NO_SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@=ae866472-b781-44ee-be66-bb86c42057cc
+    @NO_SOCIAL_WORK_ASSESSMENT_DONE@=78928c94-a7ab-4b47-9a69-1c844735a072
+    @NUTRITIONAL_AID@=3cda0eee-26fe-102b-80cb-0017a47871b2
+    @ASSISTANCE_WITH_TRANSPORT@=3cd67432-26fe-102b-80cb-0017a47871b2
+    
+    @COMMUNITY_HEALTH_WORKER_HOME_VISITS@=17508124-7872-4411-96eb-ce110e230623
+    @ARTIFICIAL_MILK@=01004d88-1701-443b-a2ac-c767fda78fb9
+    @OTHER_NON_CODED@=3cee7fb4-26fe-102b-80cb-0017a47871b2
      </macros>
 	
 <style>
@@ -514,33 +526,33 @@ table {
 					<td colspan="3">Socio-economic Assistance:</td>
 				</tr>
 				<tr>
-					<td>☐ Already receiving:</td>
-					<td>☐ Recommended and Starting today:</td>
-					<td>☐ No Social Supports Recommended</td>
+					<td><obs id="AlreadyReceiving" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE@" answerConceptId="$@SOCIO_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@" answerLabel="" style="checkbox" />Already receiving:</td>
+					<td><obs id="Recommended" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE@" answerConceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerLabel="" style="checkbox" />Recommended and Starting today:</td>
+					<td><obs id="NotRecommended" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE@" answerConceptId="$@NO_SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerLabel="" style="checkbox" />No Social Supports Recommended</td>
 				</tr>
 				<tr>
-					<td>☐ Food package (patient or caregiver)</td>
-					<td>☐ Food package (patient or caregiver)</td>
+					<td><obs id="receivingFoodPackage" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@" answerConceptId="$@NUTRITIONAL_AID@" answerLabel="" style="checkbox" /> Food package (patient or caregiver)</td>
+					<td><obs id="recommendedFoodPackage" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@NUTRITIONAL_AID@" answerLabel="" style="checkbox" />Food package (patient or caregiver)</td>
 					<td></td>
 				</tr>
 				<tr>
-					<td>☐ Transport</td>
-					<td>☐ Transport</td>
+					<td><obs id="receivingTransport" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@" answerConceptId="$@ASSISTANCE_WITH_TRANSPORT@" answerLabel="" style="checkbox" /> Transport</td>
+					<td><obs id="recommendedTransport" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@ASSISTANCE_WITH_TRANSPORT@" answerLabel="" style="checkbox" /> Transport</td>
 					<td></td>
 				</tr>
 				<tr>
-					<td>☐ CHW Home Visits</td>
-					<td>☐ CHW Home Visits</td>
-					<td>☐ Social Work Assessment Not Done</td>
+					<td><obs id="receivingCHWVisits" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@" answerConceptId="$@COMMUNITY_HEALTH_WORKER_HOME_VISITS@" answerLabel="" style="checkbox" /> CHW Home Visits</td>
+					<td><obs id="recommendedCHWVisits" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@COMMUNITY_HEALTH_WORKER_HOME_VISITS@" answerLabel="" style="checkbox" /> CHW Home Visits</td>
+					<td><obs id="NoAssessmentDone" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE@" answerConceptId="$@NO_SOCIAL_WORK_ASSESSMENT_DONE@" answerLabel="" style="checkbox" />Social Work Assessment Not Done</td>
 				</tr>
 				<tr>
-					<td>☐ Artificial Milk</td>
-					<td>☐ Artificial Milk</td>
+					<td><obs id="receivingArtificialMilk" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@" answerConceptId="$@ARTIFICIAL_MILK@" answerLabel="" style="checkbox" /> Artificial Milk</td>
+					<td><obs id="recommendedArtificialMilk" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@ARTIFICIAL_MILK@" answerLabel="" style="checkbox" /> Artificial Milk</td>
 					<td></td>
 				</tr>
 				<tr>
-					<td>☐ Other:</td>
-					<td>☐ Other:</td>
+					<td><obs id="receivingOther" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:" style="checkbox" /></td>
+					<td><obs id="recommendedOther" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:" style="checkbox" /></td>
 					<td></td>
 				</tr>
 			</table>
@@ -549,7 +561,7 @@ table {
 	</tr>
 	<tr>
 		<td colspan="2">Areas of Concern for Next Appointment /
-			Additional Comments:</td>
+			Additional Comments:<br/><br/><br/></td>
 	</tr>
 </table>
 <br />
