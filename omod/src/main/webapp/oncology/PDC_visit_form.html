@@ -38,6 +38,14 @@
     @SIXTY_MONTHS@=dcef7400-6a7c-428c-8706-1036bc251ba3
     @NOT_APPLICABLE@=3cd7b72a-26fe-102b-80cb-0017a47871b2
     @AGE_USED@=1fca6d51-255f-493d-a281-7521b384a623
+    
+    @NORMAL@=3cd750a0-26fe-102b-80cb-0017a47871b2
+    @ABNORMAL@=3cd75230-26fe-102b-80cb-0017a47871b2
+    @COMMUNICATION@=1fc5e9a8-e6c2-48c4-b6ed-9b21d733dc01
+    @LARGE_MUSCLE_MOVEMENTS@=497c7a76-1756-44b2-9fc9-c5b131004959
+    @SMALL_MUSCLE_MOVEMENTS@=d0fdea6f-37f7-4a9c-9f95-488b9b31c6de
+    @PROBLEM_SOLVING@=b53ff26a-515c-4a7c-bebe-b80c594e6d4c
+    @PERSONAL_SOCIAL@=fda3b1a8-7e8f-4ae9-973a-f8c41713c595
      </macros>
 	
 <style>
@@ -410,38 +418,46 @@ table {
 				</tr>
 				<tr>
 					<td><br /> <br />
-						<table style="background-color: #00FF00;" cellspacing="0"
-							cellpadding="6">
+						<table style="background-color: #00FF00;" cellspacing="0" cellpadding="6">
 							<tr>
+								<td>Communication:</td>
 								<td>
-									Communication:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</td>
-								<td>☐ normal (white)
-									&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ abnormal
-									(gray/black)</td>
+								<obs id="ASQCommunicationNormal" conceptId="$@COMMUNICATION@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
+					            &#160;&#160;&#160;&#160;&#160;&#160;
+					            <obs id="ASQCommunicationAbnormal" conceptId="$@COMMUNICATION@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (gray/black)" style="checkbox" />
+					            </td>
 							</tr>
 							<tr>
 								<td>Large Muscle Movements:</td>
-								<td>☐normal
-									(white)&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ abnormal
-									(gray/black)</td>
+								<td>
+								<obs id="ASQLargeMuscleMovementsNormal" conceptId="$@LARGE_MUSCLE_MOVEMENTS@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
+					            &#160;&#160;&#160;&#160;&#160;&#160;
+					            <obs id="ASQLargeMuscleMovementsAbnormal" conceptId="$@LARGE_MUSCLE_MOVEMENTS@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (gray/black)" style="checkbox" />
+					            </td>
 							</tr>
 							<tr>
 								<td>Small Muscle Movements:</td>
-								<td>☐normal
-									(white)&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ abnormal
-									(gray/black)</td>
+								<td>
+								<obs id="ASQSmallMuscleMovementsNormal" conceptId="$@SMALL_MUSCLE_MOVEMENTS@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
+					            &#160;&#160;&#160;&#160;&#160;&#160;
+					            <obs id="ASQSmallMuscleMovementsAbnormal" conceptId="$@SMALL_MUSCLE_MOVEMENTS@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (gray/black)" style="checkbox" />
+					            </td>
 							</tr>
 							<tr>
 								<td>Problem Solving:</td>
-								<td>☐normal
-									(white)&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ abnormal
-									(gray/black)</td>
+								<td>
+								<obs id="ASQProblemSolvingNormal" conceptId="$@PROBLEM_SOLVING@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
+					            &#160;&#160;&#160;&#160;&#160;&#160;
+					            <obs id="ASQSProblemSolvingAbnormal" conceptId="$@PROBLEM_SOLVING@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (gray/black)" style="checkbox" />
+					            </td>
 							</tr>
 							<tr>
 								<td>Personal - Social:</td>
-								<td>☐normal
-									(white)&#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ abnormal
-									(gray/black)</td>
+								<td>
+								<obs id="ASQPersonalSocialNormal" conceptId="$@PERSONAL_SOCIAL@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
+					            &#160;&#160;&#160;&#160;&#160;&#160;
+					            <obs id="ASQPersonalSocialAbnormal" conceptId="$@PERSONAL_SOCIAL@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (gray/black)" style="checkbox" />
+					            </td>
 							</tr>
 						</table></td>
 				</tr>
