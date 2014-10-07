@@ -39,6 +39,13 @@
     @NOT_APPLICABLE@=3cd7b72a-26fe-102b-80cb-0017a47871b2
     @AGE_USED@=1fca6d51-255f-493d-a281-7521b384a623
     
+    @HEAD_CIRCUMFERENCE@=3ceb96b4-26fe-102b-80cb-0017a47871b2
+    @WEIGHT_FOR_AGE_Z_SCORE@=c9d8c9db-518c-4a00-985d-d2fc8ac1f739
+    @HEIGHT_FOR_AGE_Z_SCORE@=6d4b1720-f45c-4069-98d9-e7e865105a7a
+    @WEIGHT_FOR_HEIGHT_Z_SCORE@=2438e295-d9da-4d5c-bacc-13c313e34755
+    @HC_FOR_AGE_Z_SCORE@=9f3180c5-20ce-479f-9276-63d773765c28
+    @INTERVAL_GROWTH@=ceb6b7b2-f26d-4f7b-92ae-9b0c1df86aa4
+    
     @NORMAL@=3cd750a0-26fe-102b-80cb-0017a47871b2
     @ABNORMAL@=3cd75230-26fe-102b-80cb-0017a47871b2
     @COMMUNICATION@=1fc5e9a8-e6c2-48c4-b6ed-9b21d733dc01
@@ -311,22 +318,22 @@ table {
 					<td>HC/Age Z-score</td>
 				</tr>
 				<tr>
-					<td><obs conceptId="$@WEIGHT@" labelText="" />kg</td>
-					<td><obs conceptId="$@HEIGHT@" labelText="" />cm</td>
-					<td style="background-color: #00FF00;" align="center">☐no previous weight<br /> ☐adequate<br />
+					<td><obs conceptId="$@WEIGHT@" labelText="" /><br/>kg</td>
+					<td><obs conceptId="$@HEIGHT@" labelText="" /><br/>cm</td>
+					<td style="background-color: #00FF00;" align="left"><obs conceptId="$@INTERVAL_GROWTH@" labelText="" /><br/>☐no previous weight<br /> ☐adequate<br />
 						☐inadequate<br /> ☐N/A (>6mo)<br />
 					</td>
-					<td align="center">cm ☐N/A (>18mo)</td>
-					<td align="center">________<br /> ☐&gt; -2<br /> ☐&gt; -3<br />
+					<td align="left"><obs conceptId="$@HEAD_CIRCUMFERENCE@" labelText="" /><br/>cm ☐N/A (>18mo)</td>
+					<td align="left"><obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" labelText="" /><br /> ☐&gt; -2<br /> ☐&gt; -3<br />
 						AND &lt; -2<br /> ☐&lt;-3
 					</td>
-					<td align="center">________<br /> ☐&gt; -2<br /> ☐&gt; -3<br />
+					<td align="left"><obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@" labelText="" /><br /> ☐&gt; -2<br /> ☐&gt; -3<br />
 						AND &lt; 2<br /> ☐&lt;-3
 					</td>
-					<td align="center">________<br /> ☐&gt; -2<br /> ☐&gt; -3<br />
+					<td align="left"><obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" labelText="" /><br /> ☐&gt; -2<br /> ☐&gt; -3<br />
 						AND &lt; -2<br /> ☐&lt;-3
 					</td>
-					<td align="center">________<br /> ☐&gt; +3<br /> ☐&gt; -3<br />
+					<td align="left"><obs conceptId="$@HC_FOR_AGE_Z_SCORE@" labelText="" /><br /> ☐&gt; +3<br /> ☐&gt; -3<br />
 						AND &lt; +3<br /> ☐&lt;-3
 					</td>
 				</tr>
