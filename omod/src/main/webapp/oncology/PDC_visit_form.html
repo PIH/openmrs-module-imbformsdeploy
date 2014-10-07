@@ -55,6 +55,7 @@
     @NO_SOCIAL_WORK_ASSESSMENT_DONE@=78928c94-a7ab-4b47-9a69-1c844735a072
     @NUTRITIONAL_AID@=3cda0eee-26fe-102b-80cb-0017a47871b2
     @ASSISTANCE_WITH_TRANSPORT@=3cd67432-26fe-102b-80cb-0017a47871b2
+    @SOCIO_ECONOMIC_ASSISTANCE_NON_CODED@=9710b133-7209-4e8f-af0b-fa32112230bc
     
     @COMMUNITY_HEALTH_WORKER_HOME_VISITS@=17508124-7872-4411-96eb-ce110e230623
     @ARTIFICIAL_MILK@=01004d88-1701-443b-a2ac-c767fda78fb9
@@ -88,79 +89,17 @@
 .disabled {
 	color: #D8D8D8;
 }
-
-.sectionHeader {
-	background-color: #3333cc;
-	color: white;
-	display: block;
-	padding: 2px;
-	font-weight: bold;
-}
-
-table.symptoms th {
-	text-align: right;
-}
-
-th.subheader {
-	background-color: #8FABC7;
-	color: white
-}
-
-.note {
-	color: red;
-}
-
 td {
 	vertical-align: top;
-}
-
-table.labTable td {
-	color: red;
-}
-
-table.labTable
-		td.dateField {
-	text-align: right;
-}
-
-table.identifierTable td {
-	padding-right: 10px;
-}
-
-div.paddedTable span {
-	padding-right: 20px;
-}
-
-.indented {
-	padding-left: 20pt;
-	padding-right: 20pt;
-}
-
-.bigIndent {
-	padding-left: 40pt;
-	padding-right: 10pt;
-}
-
-.newpage {
-	color: #8FABC7;
-	font-weight: bold;
 }
 
 table {
 	border-collapse: collapse;
 }
 
-.disdiv {
-	background-color: white;
-}
-
 .hidden {
 	color: #D8D8D8;
 	width: 19%;
-}
-
-.text_container {
-	width: 29%;
 }
 </style>
 
@@ -562,8 +501,8 @@ table {
 					<td></td>
 				</tr>
 				<tr>
-					<td><obs id="receivingOther" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:" style="checkbox" /></td>
-					<td><obs id="recommendedOther" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:" style="checkbox" /></td>
+					<td><obs id="receivingOther" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:" style="checkbox" /><obs conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_NON_CODED@" labelText="" /></td>
+					<td><obs id="recommendedOther" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:" style="checkbox" /><obs conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_NON_CODED@" labelText="" /></td>
 					<td></td>
 				</tr>
 			</table>
@@ -601,13 +540,6 @@ table {
 	</tr>
 </table>
 
-<br />
-<table>
-	<tr>
-		<td>Signature: <encounterProvider role="Oncology Provider"
-				default="currentUser" /></td>
-	</tr>
-</table>
 <br />
 <submit /> <br />
 <br />
