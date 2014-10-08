@@ -6,6 +6,24 @@
 		started on Sept 22, 2012		
 	--> 
 	
+	 <script>
+ 
+    $j( document ).ready(function() {
+    	$j('tr.checkboxGroup input[type=checkbox]').each(function() {
+    		$j(this).click(function () { 
+    			var clicked = $j(this).closest('tr').attr("id");
+    			$j('tr.checkboxGroup input[type=checkbox]').each(function() { //loop through each checkbox
+    				var current = $j(this).closest('tr').attr("id");
+    			if(current == clicked)
+	                this.checked = false; //deselect all checkboxes with class "checkbox1"                       
+	               });     			
+    			this.checked = true;
+    	     });
+    	});
+    });
+ 
+    </script>
+	
 	<macros> 	
 	@DEMOGRAPHIC_CHANGES@=92be5903-2956-4c35-9b0b-cb428dfb7084
 	@YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
@@ -153,7 +171,7 @@ table {
 </section>
 <br />
 <table border="2" cellspacing="0" cellpadding="6" width="100%">
-	<tr>
+	<tr id="row1" class="checkboxGroup">
 		<td>Have there been any demographic changes? (ex. contact
 			information)<br /> *If yes, complete the Change in Demographics form
 			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
@@ -175,7 +193,7 @@ table {
 					<td>Does the patient have any of the following danger signs?</td>
 					<td></td>
 				</tr>
-				<tr>
+				<tr id="row2" class="checkboxGroup">
 					<td>Problems breathing with chest indrawing, rapid breathing, stridor</td>
 					<td>
 					<obs id="breathingDangerSignsPresentYes" conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
@@ -183,7 +201,7 @@ table {
 					<obs id="breathingDangerSignsPresentNo" conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
 					</td>
 				</tr>
-				<tr>
+				<tr id="row3" class="checkboxGroup">
 					<td>Convulsions</td>
 					<td>
 					<obs id="convulsionsDangerSignsPresentYes" conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
@@ -191,7 +209,7 @@ table {
 					<obs id="convulsionsDangerSignsPresentNo" conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
 					</td>
 				</tr>
-				<tr>
+				<tr id="row4" class="checkboxGroup">
 					<td>Lethargy or unresponsiveness</td>
 					<td>
 					<obs id="lethargyDangerSignsPresentYes" conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
@@ -199,7 +217,7 @@ table {
 					<obs id="lethargyDangerSignsPresentNo" conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
 					</td>
 				</tr>
-				<tr>
+				<tr id="row5" class="checkboxGroup">
 					<td>Umbilical cord redness</td>
 					<td>
 					<obs id="umbilicalDangerSignsPresentYes" conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
@@ -207,7 +225,7 @@ table {
 					<obs id="umbilicalDangerSignsPresentNo" conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
 					</td>
 				</tr>
-				<tr>
+				<tr id="row6" class="checkboxGroup">
 					<td>Stiff neck or bulging fontanelles</td>
 					<td>
 					<obs id="stiffNeckDangerSignsPresentYes" conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
@@ -215,7 +233,7 @@ table {
 					<obs id="stiffNeckDangerSignsPresentNo" conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
 					</td>
 				</tr>
-				<tr>
+				<tr id="row7" class="checkboxGroup">
 					<td colspan="2"><br/>If yes above, was:
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 					<obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
@@ -240,7 +258,7 @@ table {
                          *Age 2-59 months: ≤ 37.5 °C <br/><br/> <br/>                       
 					</td>
 				</tr>
-				<tr>
+				<tr id="row8" class="checkboxGroup">
 					<td colspan="2">Is temperature abnormal for age range?
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 					<obs id="abnormalTemperatureYes" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
@@ -249,7 +267,7 @@ table {
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 					</td>
 				</tr>
-				<tr>
+				<tr id="row9" class="checkboxGroup">
 					<td colspan="2"><br/>If yes above, was:
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 					<obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
@@ -274,7 +292,7 @@ table {
                          *Child 1-5 years: &lt; 40 breaths per minute <br/><br/> <br/>                       
 					</td>
 				</tr>
-				<tr>
+				<tr id="row10" class="checkboxGroup">
 					<td colspan="2">Is respiratory rate abnormal for age range?
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 					<obs id="abnormalRespiratoryRateYes" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
@@ -283,7 +301,7 @@ table {
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 					</td>
 				</tr>
-				<tr>
+				<tr id="row11" class="checkboxGroup">
 					<td colspan="2"><br/>If yes above, was:
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 					<obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
@@ -367,7 +385,7 @@ table {
 		<td style="vertical-align: middle;">Development</td>
 		<td>
 			<table>
-				<tr>
+				<tr id="row12" class="checkboxGroup">
 					<td>ASQ Scores by Domain:<br /> Age used:
 					&#160;
 					<obs id="ageUsedSixMonths" conceptId="$@AGE_USED@" answerConceptId="$@SIX_MONTHS@" answerLabel="6 months" style="checkbox" />
@@ -390,7 +408,7 @@ table {
 				<tr>
 					<td><br /> <br />
 						<table cellspacing="0" cellpadding="6">
-							<tr>
+							<tr id="row13" class="checkboxGroup">
 								<td>Communication:</td>
 								<td>
 								<obs id="ASQCommunicationNormal" conceptId="$@COMMUNICATION@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
@@ -398,7 +416,7 @@ table {
 					            <obs id="ASQCommunicationAbnormal" conceptId="$@COMMUNICATION@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (gray/black)" style="checkbox" />
 					            </td>
 							</tr>
-							<tr>
+							<tr id="row14" class="checkboxGroup">
 								<td>Large Muscle Movements:</td>
 								<td>
 								<obs id="ASQLargeMuscleMovementsNormal" conceptId="$@LARGE_MUSCLE_MOVEMENTS@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
@@ -406,7 +424,7 @@ table {
 					            <obs id="ASQLargeMuscleMovementsAbnormal" conceptId="$@LARGE_MUSCLE_MOVEMENTS@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (gray/black)" style="checkbox" />
 					            </td>
 							</tr>
-							<tr>
+							<tr id="row15" class="checkboxGroup">
 								<td>Small Muscle Movements:</td>
 								<td>
 								<obs id="ASQSmallMuscleMovementsNormal" conceptId="$@SMALL_MUSCLE_MOVEMENTS@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
@@ -414,7 +432,7 @@ table {
 					            <obs id="ASQSmallMuscleMovementsAbnormal" conceptId="$@SMALL_MUSCLE_MOVEMENTS@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (gray/black)" style="checkbox" />
 					            </td>
 							</tr>
-							<tr>
+							<tr id="row16" class="checkboxGroup">
 								<td>Problem Solving:</td>
 								<td>
 								<obs id="ASQProblemSolvingNormal" conceptId="$@PROBLEM_SOLVING@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
@@ -422,7 +440,7 @@ table {
 					            <obs id="ASQSProblemSolvingAbnormal" conceptId="$@PROBLEM_SOLVING@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (gray/black)" style="checkbox" />
 					            </td>
 							</tr>
-							<tr>
+							<tr id="row17" class="checkboxGroup">
 								<td>Personal - Social:</td>
 								<td>
 								<obs id="ASQPersonalSocialNormal" conceptId="$@PERSONAL_SOCIAL@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
@@ -438,7 +456,7 @@ table {
 						Yes&#160;&#160;&#160;&#160; ☐ No &#160;&#160;&#160;&#160;&#160; ☐
 						N/A</td>
 				</tr>
-				<tr>
+				<tr id="row18" class="checkboxGroup">
 					<td >Has caregiver received at least one ECD education session?
 					 &#160;&#160;&#160;&#160;<obs id="receivedECDEducationYes" conceptId="$@RECEIVED_AT_LEAST_ONE_ECD_EDUCATION_SESSION@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="receivedECDEducationNo" conceptId="$@RECEIVED_AT_LEAST_ONE_ECD_EDUCATION_SESSION@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />					
 					</td>
@@ -483,7 +501,7 @@ table {
 				<tr>
 					<td colspan="3">Socio-economic Assistance:</td>
 				</tr>
-				<tr>
+				<tr id="row19" class="checkboxGroup">
 					<td><obs id="AlreadyReceiving" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE@" answerConceptId="$@SOCIO_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@" answerLabel="" style="checkbox" />Already receiving:</td>
 					<td><obs id="Recommended" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE@" answerConceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerLabel="" style="checkbox" />Recommended and Starting today:</td>
 					<td><obs id="NotRecommended" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE@" answerConceptId="$@NO_SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerLabel="" style="checkbox" />No Social Supports Recommended</td>
@@ -528,7 +546,7 @@ table {
 	<tr style="background-color: #929292;">
 		<td align="center">Disposition</td>
 	</tr>
-	<tr>
+	<tr id="row20" class="checkboxGroup">
 		<td>Follow-up needed:&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 			<obs id="patientNeedsFollowUpYes" conceptId="$@NEED_FOLLOW_UP@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs conceptId="$@DATE_OF_STARTING_FOLLOW_UP@" labelText="" />
 			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="patientNeedsFollowUpNo" conceptId="$@NEED_FOLLOW_UP@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" /></td>
