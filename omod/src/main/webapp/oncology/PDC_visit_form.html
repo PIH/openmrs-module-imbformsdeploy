@@ -95,7 +95,7 @@
 }
 
 .disabled {
-	color: #D8D8D8;
+	color: #C0C0C0;
 }
 td {
 	vertical-align: top;
@@ -115,22 +115,22 @@ table {
 
 	<table border="2" cellspacing="0" cellpadding="6" width="100%">
 		<tr>
-			<td style="background-color: #FFFF00"><b>IMB ID #: <lookup
+			<td><b>IMB ID #: <lookup
 						class="value"
 						expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
 			</b></td>
-			<td style="background-color: #FFFF00">Date: <encounterDate
+			<td>Date: <encounterDate
 					default="today" /></td>
-			<td style="background-color: #FFFF00"></td>
+			<td></td>
 		</tr>
 		<tr>
-			<td style="background-color: #FFFF00">Last name/<span
+			<td>Last name/<span
 				class="disabled">Nom: </span> <lookup class="value"
 					expression="patient.personName.familyName" /></td>
-			<td style="background-color: #FFFF00">First name/<span
+			<td>First name/<span
 				class="disabled">Prenom: </span> <lookup class="value"
 					expression="patient.personName.givenName" /></td>
-			<td style="background-color: #FFFF00">Gender: <lookup
+			<td>Gender: <lookup
 					class="value" expression="patient.Gender" /></td>
 		</tr>
 		<tr>
@@ -144,10 +144,10 @@ table {
 					Pediatric Developmental Clinic</strong></td>
 			<td></td>
 		</tr>
-		<tr style="background-color: #FFFF00">
+		<tr>
 			<td>Clinic or Hospital:</td>
 			<td><encounterLocation id="encounterLocation" order="Rwinkwavu Hospital,Ndego Health Center,Kabarondo Health Center,Unknown location" /></td>
-			<td></td>
+			<td>Author:<encounterProvider id="encounterProvider" default="currentUser"/></td>
 		</tr>
 	</table>
 </section>
@@ -163,7 +163,7 @@ table {
 </table>
 <br />
 <table border="2" cellspacing="0" cellpadding="6" width="100%">
-	<tr style="background-color: #929292;">
+	<tr>
 		<td colspan="2" align="center">Danger Signs</td>
 	</tr>
 	<tr>
@@ -321,7 +321,7 @@ table {
 				<tr>
 					<td><obs conceptId="$@WEIGHT@" labelText="" /><br/>kg</td>
 					<td><obs conceptId="$@HEIGHT@" labelText="" /><br/>cm</td>
-					<td style="background-color: #00FF00;" align="left"><obs conceptId="$@INTERVAL_GROWTH@" labelText="" /><br/>☐no previous weight<br /> ☐adequate<br />
+					<td align="left"><obs conceptId="$@INTERVAL_GROWTH@" labelText="" /><br/>☐no previous weight<br /> ☐adequate<br />
 						☐inadequate<br /> ☐N/A (>6mo)<br />
 					</td>
 					<td align="left"><obs conceptId="$@HEAD_CIRCUMFERENCE@" labelText="" /><br/>cm ☐N/A (>18mo)</td>
@@ -352,13 +352,13 @@ table {
 		<td><obs conceptId="$@CORRECTED_AGE@" labelText="" />(weeks) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<b>*Note: If possible, use this age
 			for determining z-scores above</b> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;☐ N/A &#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ No Info</td>
 	</tr>
-	<tr>
+	<tr class="disabled">
 		<td>Traditional Medicine</td>
 		<td>Has the patient received any traditional
 			medications/treatments? ☐ Yes___________________________________☐ No
 		</td>
 	</tr>
-	<tr>
+	<tr class="disabled">
 		<td>Vaccination Status</td>
 		<td>☐ Complete: ☐ Unknown: ☐ Vaccines
 			needed:________________________________________________________________________________________</td>
@@ -367,7 +367,7 @@ table {
 		<td style="vertical-align: middle;">Development</td>
 		<td>
 			<table>
-				<tr style="background-color: #00FF00;">
+				<tr>
 					<td>ASQ Scores by Domain:<br /> Age used:
 					&#160;
 					<obs id="ageUsedSixMonths" conceptId="$@AGE_USED@" answerConceptId="$@SIX_MONTHS@" answerLabel="6 months" style="checkbox" />
@@ -389,7 +389,7 @@ table {
 				</tr>
 				<tr>
 					<td><br /> <br />
-						<table style="background-color: #00FF00;" cellspacing="0" cellpadding="6">
+						<table cellspacing="0" cellpadding="6">
 							<tr>
 								<td>Communication:</td>
 								<td>
@@ -433,21 +433,21 @@ table {
 						</table></td>
 				</tr>
 				<tr>
-					<td>Developmental counseling provided:
+					<td class="disabled">Developmental counseling provided:
 						&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;☐
 						Yes&#160;&#160;&#160;&#160; ☐ No &#160;&#160;&#160;&#160;&#160; ☐
 						N/A</td>
 				</tr>
 				<tr>
-					<td style="background-color: #00FF00">Has caregiver received at least one ECD education session?
+					<td >Has caregiver received at least one ECD education session?
 					 &#160;&#160;&#160;&#160;<obs id="receivedECDEducationYes" conceptId="$@RECEIVED_AT_LEAST_ONE_ECD_EDUCATION_SESSION@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="receivedECDEducationNo" conceptId="$@RECEIVED_AT_LEAST_ONE_ECD_EDUCATION_SESSION@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />					
 					</td>
 				</tr>
-				<tr>
+				<tr class="disabled">
 					<td>How many play things does child have? ☐
 						0&#160;&#160;&#160;&#160;☐ 1&#160;&#160;&#160;&#160;☐ +2</td>
 				</tr>
-				<tr>
+				<tr class="disabled">
 					<td>For children aged (36-59 months only) how many times has
 						caregiver engaged in an activity to play or teach child directly
 						in the past 3 days?<br />
@@ -459,7 +459,7 @@ table {
 			</table>
 		</td>
 	</tr>
-	<tr>
+	<tr class="disabled">
 		<td>Feeding Difficulty</td>
 		<td>
 			<table>
@@ -478,7 +478,7 @@ table {
 	</tr>
 	<tr>
 		<td colspan="2">
-			<table style="background-color: #00FF00" cellspacing="0"
+			<table cellspacing="0"
 				cellpadding="6" width="100%">
 				<tr>
 					<td colspan="3">Socio-economic Assistance:</td>
@@ -517,13 +517,13 @@ table {
 
 		</td>
 	</tr>
-	<tr>
+	<tr class="disabled">
 		<td colspan="2">Areas of Concern for Next Appointment /
 			Additional Comments:<br/><br/><br/></td>
 	</tr>
 </table>
 <br />
-<table style="background-color: #FFFF00" border="2" cellspacing="0"
+<table border="2" cellspacing="0"
 	cellpadding="6" width="100%">
 	<tr style="background-color: #929292;">
 		<td align="center">Disposition</td>
