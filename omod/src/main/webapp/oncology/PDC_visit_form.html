@@ -20,6 +20,18 @@
     			this.checked = true;
     	     });
     	});
+    	
+    	
+    	$j('tr#row20 input[type=checkbox]').each(function() { //loop through each checkbox
+    		$j(this).click(function () { 
+    			var clicked = $j(this).closest('span').attr("id");
+    			if(clicked == 'patientNeedsFollowUpNo')
+    				$j("#toggleable1").show();
+    			if(clicked == 'patientNeedsFollowUpYes')
+    				$j("#toggleable1").hide();
+    	      });                     
+           }); 
+    	
     });
  
     </script>
@@ -551,6 +563,7 @@ table {
 			<obs id="patientNeedsFollowUpYes" conceptId="$@NEED_FOLLOW_UP@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs conceptId="$@DATE_OF_STARTING_FOLLOW_UP@" labelText="" />
 			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="patientNeedsFollowUpNo" conceptId="$@NEED_FOLLOW_UP@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" /></td>
 	</tr>
+	<tbody id="toggleable1">
 	<tr>
 		<td>If no: <br />
 		<br /><obs id="noFolloUpReasonDischarge" conceptId="$@REASON_FOR_NOT_DOING_FOLLOW_UP@" answerConceptId="$@DISCHARGED@" answerLabel="" style="checkbox" /> Discharge:&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="reasonFodischargeMetConditions" conceptId="$@REASON_FOR_DISCHARGE@" answerConceptId="$@PATIENT_MET_CONDITION_SPECIFIC_CRITERIA@" answerLabel="" style="checkbox" /> met
@@ -564,6 +577,7 @@ table {
 	<tr>
 		<td><obs id="noFolloUpReasonDied" conceptId="$@REASON_FOR_NOT_DOING_FOLLOW_UP@" answerConceptId="$@PATIENT_DIED@" answerLabel="" style="checkbox" /> Died</td>
 	</tr>
+	</tbody>
 </table>
 
 <br />
