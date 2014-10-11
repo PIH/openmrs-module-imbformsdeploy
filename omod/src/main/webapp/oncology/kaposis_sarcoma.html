@@ -309,27 +309,29 @@ td {
 					<td colspan="3"></td>
 		</tr>
 		<TBODY id="toggleble20">
-			<tr class="checkboxGroup , spaceUnder">
-				<td>Date:<obs id="dateOfPathologyObs"
-						conceptId="926dd83d-5c6c-43d9-9fb8-a8c2e364d5f6" labelText="" /><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(date
-					of report)</td>
-				<td colspan="5">Site of Pathology:<!-- <obs id="siteOfPathologyObs"
-						conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" labelText="" /> -->
-						<obs id="siteOfPathologyBWHObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="6c87ddb0-f8e9-4115-98cc-5e71903f2c04" answerLabel="BWH" />
-						<obs id="siteOfPathologyBUTAROObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="BUTARO" />
-						<obs id="siteOfPathologyKFHObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KFH" />
-						<obs id="siteOfPathologyCHUKObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" />
-						<obs id="siteOfPathologyCHUBObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" />
-						<obs id="siteOfPathologyOTHERObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" />
-						<obs id="siteOfPathologyOTHERTextObs" conceptId="deeca3da-a026-446b-a756-0f6eaecfd9a7" />
+		<tr class="checkboxGroup , spaceUnder">
+		<td colspan="6">
+		<b>Pathology report date:</b><obs id="dateOfPathologyObs"
+						conceptId="926dd83d-5c6c-43d9-9fb8-a8c2e364d5f6" labelText="" /><br />
+						(Include a copy of pathology report in chart, if applicable )
+		</td>
+		</tr>
+			<tr class="checkboxGroup , spaceUnder">  
+				<td colspan="6"><b>Institution issuing pathology report:</b>&#160;&#160;&#160;&#160;&#160;&#160;
+						<obs id="siteOfPathologyBWHObs" conceptId="2c077745-437b-4e5a-9b7f-d896632340ba" answerConceptId="6c87ddb0-f8e9-4115-98cc-5e71903f2c04" answerLabel="BWH" />
+						<obs id="siteOfPathologyBUTAROObs" conceptId="2c077745-437b-4e5a-9b7f-d896632340ba" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="BUTARO" />
+						<obs id="siteOfPathologyKFHObs" conceptId="2c077745-437b-4e5a-9b7f-d896632340ba" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KFH" />
+						<obs id="siteOfPathologyCHUKObs" conceptId="2c077745-437b-4e5a-9b7f-d896632340ba" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" />
+						<obs id="siteOfPathologyCHUBObs" conceptId="2c077745-437b-4e5a-9b7f-d896632340ba" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" />
+						<obs id="siteOfPathologyOTHERObs" conceptId="2c077745-437b-4e5a-9b7f-d896632340ba" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" />
+						<obs id="siteOfPathologyOTHERTextObs" conceptId="dcca298c-67d2-4968-84dc-1d792eb7f7c5" />
 				
 				</td>
 			</tr>
 			
 			
 			<tr class="checkboxGroup , spaceUnder">
-				<td>Pathologic Diagnosis:</td>
-				<td colspan="5"><obs id="karposisSarcoma"
+				<td colspan="6"><b>Pathologic Diagnosis:</b> &#160;&#160;&#160;&#160;&#160;&#160; <obs id="karposisSarcoma"
 						conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
 						answerConceptId="$@KARPOSIS_SARCOMA@"
 						answerLabel="Kaposi’s Sarcoma" />
@@ -337,8 +339,18 @@ td {
 						</td>
 			</tr>
 			
-						<tr class="spaceUnder">
-			<td colspan="6">Imaging Studies (includea copy of imaging report in chart, if applicable)</td>
+			<tr class="checkboxGroup , spaceUnder">  
+				<td colspan="6"><b>HIV Status*</b><br/><br/>
+						<obs id="statusPositive" conceptId="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e" answerConceptId="3cd3a7a2-26fe-102b-80cb-0017a47871b2" answerLabel="Positive" />
+						&#160;&#160;&#160;&#160;&#160;&#160;<obs id="statusNegative" conceptId="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e" answerConceptId="3cd28732-26fe-102b-80cb-0017a47871b2" answerLabel="Negative" />				
+				       &#160;&#160;&#160;&#160;&#160;&#160;<obs id="dateOfDiagnosis" conceptId="3ce496ca-26fe-102b-80cb-0017a47871b2" labelText="Diagnosis Date:" /><br/>
+				       *must have records, CANNOT be self-reported				       
+				</td>
+			</tr>
+
+			<tr class="spaceUnder">
+				<td colspan="6">Imaging Studies (include a copy of imaging
+					report in chart, if applicable)</td>
 			</tr>
 			<tr>
 				<td colspan="3" width="50%"><obs id="chestXRayObs"
