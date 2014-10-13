@@ -358,7 +358,7 @@ td {
 			
 			<tr class="checkboxGroup , spaceUnder">  
 				<td colspan="6"><b>ARV Status</b><br/><br/>
-                 <obs id="onART" conceptId="3cdc08f2-26fe-102b-80cb-0017a47871b2" answerConceptId="3cdc0a8c-26fe-102b-80cb-0017a47871b2" answerLabel="On ART" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="" conceptId="3ce498dc-26fe-102b-80cb-0017a47871b2" labelText="Start Date:" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Regimen:<obs id="" conceptId="3ce5d198-26fe-102b-80cb-0017a47871b2"/><br/>
+                 <obs id="onART" conceptId="3cdc08f2-26fe-102b-80cb-0017a47871b2" answerConceptId="3cdc0a8c-26fe-102b-80cb-0017a47871b2" answerLabel="On ART" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="" conceptId="3ce498dc-26fe-102b-80cb-0017a47871b2" labelText="Start Date:" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Regimen:<obs id="" conceptId="3ce5d198-26fe-102b-80cb-0017a47871b2"/><br/>
                  <obs id="willStartART" conceptId="3cdc08f2-26fe-102b-80cb-0017a47871b2" answerConceptId="ef2cc826-b0c6-4533-94c1-c87bf6f35036" answerLabel="Will Start ART" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="" conceptId="8afdad7c-1119-4031-92dc-c011ee36e127" labelText="Planned Start Date:" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Regimen:<obs id="" conceptId="4fe798f5-cdfa-422d-aedd-3e6776c6d10b"/><br/>
                  <obs id="notOnART" conceptId="3cdc08f2-26fe-102b-80cb-0017a47871b2" answerConceptId="3cdc0c08-26fe-102b-80cb-0017a47871b2" answerLabel="Not on ART" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="" conceptId="3cdc0780-26fe-102b-80cb-0017a47871b2" labelText="Reason:" />
                  
@@ -554,11 +554,167 @@ td {
 		</obsgroup>
 	</table>
 		<!-- End of the pathology section -->
+		<table style='border: 0px;'>
+		<tr class="spaceUnder">
+				<td colspan="6"><h3>FINAL DISEASE STAGING</h3></td>
+			</tr>
+		<tr class="spaceUnder">
+				<td colspan="6"><b>Confirmed Disease Stage</b></td>
+		</tr>
+		<tr class="spaceUnder">
+				<td colspan="6">ECOG Functional Status<obs id="" conceptId="8ad685de-4f19-4b75-b3f1-ee3b06bf05a2" />(0-5)
+				</td>
+		</tr>
+		<tr>
+				<td>TIS Staging*:</td>
+				<obsgroup groupingConceptId="60f733d6-7000-48eb-be8e-c503b094b882">
+				<td><obs id="kaposiStageTISTObs"
+						conceptId="40121f41-5303-4b18-8251-1d62e0eb3e2f" labelText="T:" />
+				</td>
+				<td><obs id="kaposiStageTISIObs"
+						conceptId="26ada79f-153a-4067-b4dd-bec6bfc40647" labelText="I:" />
+				</td>
+				<td><obs id="kaposiStageTISSObs"
+						conceptId="2476256a-2c16-4605-adcb-2ca1d33c299d" labelText="S:" />
+				</td>
+				</obsgroup>
+				<td></td>
+				<td></td>
+			</tr>
+			
+			
+		<tr class="checkboxGroup">
+			<td>ACTG Clustered Stage<sup>*</sup>: 
+			</td>
+			<td>
+			<obs id="" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="39c6497d-fe50-4dcf-86e4-5360e1d32f82" answerLabel="I" />
+			</td>
+			<td>
+			<obs id="" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="c899d4c0-91a1-42f2-b395-114740f237fd" answerLabel="II" />
+			</td>
+			<td>
+			<obs id="" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="1d5896f3-2e0e-4bc2-aa6c-afe1911afa79" answerLabel="III" />    
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
 		
-		
+		</table>
 	<br />
+	<table style="text-align: center; border: 0px;" width="100%">
+		<tr >
+			<th><h3>TREATMENT PLAN</h3></th>
+		</tr>
+	</table>
+		<table class="togglebles" width="100%">
+		<obsgroup groupingConceptId="d4ceafd0-e5b5-422a-aecd-eac58207cbcc">
+		<TBODY id="toggleble23">
+			<tr>
+				<th class="tableHeader" colspan="4">CHEMOTHERAPY
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+				<workflowState
+					workflowId="e0a43e8d-27ce-4417-a497-54974c699bc0"
+					stateId="73521919-ea8b-43e9-ad44-20fbdad33a75" stateLabel="Planned"
+					type="checkbox" />
+					
+					
+					<workflowState
+					workflowId="e0a43e8d-27ce-4417-a497-54974c699bc0"
+					stateId="3f13abb5-0a00-4fac-b89b-4d0679c3b6e1"
+					stateLabel="Not planned" type="checkbox" />
+				</th>
+			</tr>
+			<tr>
+				<td>Regimen</td>
+				<td><obs id="chemotherapyRegimenObs"
+						conceptId="012df739-5bd1-445c-a76e-de0d5702d86a" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Cycles</td>
+				<td><obs id="chemotherapyCyclesObs"
+						conceptId="aaeb5782-3ee6-4cb8-9d27-c557ad91e241" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Planned first cycle</td>
+				<td><obs id="chemotherapyFirstCycleObs"
+						conceptId="e9b59f4e-8a3f-467f-b5e0-1296025fb286" allowFutureDates="true" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Planned regimen length</td>
+				<td><obs id="chemotherapyRegimenEndObs"
+						conceptId="6ecc0570-9711-47ad-b9f9-997dd0964e17" labelText="" />weeks</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Planned changes to standard regimen</td>
+				<td><obs id="chemotherapyStandardRegimenObs"
+						conceptId="d6e5e3a7-2ab7-45c2-a104-4f49ed01aefc" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+		</TBODY>
+		</obsgroup>
+	</table>
+	
+	<table class="togglebles" width="100%">
+		<obsgroup groupingConceptId="63ad7caa-b6e2-4b9a-b462-771a9b048c36">
+		<TBODY id="toggleble22">
+			<tr>
+				<th class="tableHeader" colspan="4">RADIATION THERAPY
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+				<!-- <workflowState
+					workflowId="bf1d4a87-4219-4741-ac9a-770fb7cb7036"
+					stateId="37848fcc-ecc3-460d-9c69-4fd3c9f3f767" stateLabel="Planned"
+					type="checkbox" /> -->
+					<obs conceptId="4084fde4-1c2d-4830-a660-d34da22d3266" 
+					answerConceptId="c0fea63b-2e63-49aa-b0eb-5297f98355ef" answerLabel="Planned" /> 
+					
+					<!-- <workflowState
+					workflowId="bf1d4a87-4219-4741-ac9a-770fb7cb7036"
+					stateId="3543071e-e416-4fe2-89e9-6d55506c6c72"
+					stateLabel="Not planned" type="checkbox" /> -->
+					<obs conceptId="4084fde4-1c2d-4830-a660-d34da22d3266" 
+					answerConceptId="7ff97aed-5be5-432a-8ba2-45ef783dc108" answerLabel="Not Planned" /> 
+				</th>
+			</tr>
+			<tr>
+				<td>Facility</td>
+				<td><obs id="radiationFacilityObs"
+						conceptId="09693eb4-aa3d-4804-bcc3-eb149cb0614a"
+						defaultValue="ceac8227-23ec-4f51-9dab-6ed3886151aa" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Planned date</td>
+				<td><obs id="radiationStartDateObs"
+						conceptId="b5f3650e-7614-4d13-8676-dd420458e1ba"
+						labelText="Start date:" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+		</TBODY>
+		</obsgroup>
+	</table>
+	
 	<workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b"
 		stateId="09426655-2909-4f6f-938b-7a31b991075e" type="hidden" />
+		<br/>
 	 <submit />
 	 <br/>
 	 <encounterVoided/>
