@@ -1,46 +1,44 @@
-<htmlform> <!--
+<htmlform>
+    <!--
            Oncology - Breast DST
             Pilot_4July_v1.3NT
                 Author:  
                 Builder: Bailly RURANGIRWA 
                 started on September 28, 2014                
-        --> 
+        -->
 
-	 <script>
- 
-    $j( document ).ready(function() {
-    	$j('tr.checkboxGroup input[type=checkbox]').each(function() {
-    		$j(this).click(function () { 
-    			var clicked = $j(this).closest('tr').attr("id");
-    			$j('tr.checkboxGroup input[type=checkbox]').each(function() { //loop through each checkbox
-    				var current = $j(this).closest('tr').attr("id");
-    			if(current == clicked)
-	                this.checked = false; //deselect all checkboxes with class "checkbox1"                       
-	               });     			
-    			this.checked = true;
-    	     });
-    	});
-    	
-    });
- 
+    <script>
+        $j(document).ready(function() {
+            $j('tr.checkboxGroup input[type=checkbox]').each(function() {
+                $j(this).click(function() {
+                    var clicked = $j(this).closest('tr').attr("id");
+                    $j('tr.checkboxGroup input[type=checkbox]').each(function() { //loop through each checkbox
+                        var current = $j(this).closest('tr').attr("id");
+                        if (current == clicked)
+                            this.checked = false; //deselect all checkboxes with class "checkbox1"                       
+                    });
+                    this.checked = true;
+                });
+            });
+
+        });
     </script>
 
-<macros>
-  
-  @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
-  @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
-  
-  @PATHOLOGY_PERFORMED@=145c13d3-dfbb-4dc6-9986-d10fd5e9bf48
-  @PATHOLOGY_PERFORMED_CONSTRUCT@=639fb794-8a5a-4958-b4b1-749e554f44fb
-  @PATHOLOGIC_DIAGNOSIS_NON_CODED@=387dc461-bde7-4d27-8754-8ee35e5be3ee
-  @PATHOLOGOGIC_DIAGNOSIS@=21f54f50-b804-476e-a0dd-a3238cd556fb
-  @PATHOLOGY_REPORT_INSTITUTION@=2c077745-437b-4e5a-9b7f-d896632340ba
-  <!-- New Concepts for KS -->
-  @KARPOSIS_SARCOMA@=8b67b07f-e755-41a8-a6d9-105a5960f22b
-  
-</macros>
-        
-        
+    <macros>
+
+        @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
+        @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
+        @PATHOLOGY_PERFORMED@=145c13d3-dfbb-4dc6-9986-d10fd5e9bf48
+        @PATHOLOGY_PERFORMED_CONSTRUCT@=639fb794-8a5a-4958-b4b1-749e554f44fb
+        @PATHOLOGIC_DIAGNOSIS_NON_CODED@=387dc461-bde7-4d27-8754-8ee35e5be3ee
+        @PATHOLOGOGIC_DIAGNOSIS@=21f54f50-b804-476e-a0dd-a3238cd556fb
+        @PATHOLOGY_REPORT_INSTITUTION@=2c077745-437b-4e5a-9b7f-d896632340ba
+        <!-- New Concepts for KS -->
+        @KARPOSIS_SARCOMA@=8b67b07f-e755-41a8-a6d9-105a5960f22b
+
+    </macros>
+
+
 
     <style>
         th.tableHeader {
@@ -149,7 +147,7 @@
             </tr>
         </table>
         <!-- Begin of the pathology section -->
-        <table style='border: 0px;'>
+        <table>
             <obsgroup groupingConceptId="$@PATHOLOGY_PERFORMED_CONSTRUCT@">
                 <tr id="row2" class="checkboxGroup , spaceUnder">
                     <td width="400px">Pathology completed</td>
@@ -440,20 +438,51 @@
 
         </table>
         <br />
-        <table style="text-align: center; border: 0px;" width="100%">
+        <table width="100%">
             <tr>
-                <th>
-                    <h3>TREATMENT PLAN</h3>
-                </th>
+                <th class="tableHeader" colspan="4">TREATMENT PLAN</th>
             </tr>
+            <tr class="checkboxGroup , treatmentPlan">
+                <td>Intent</td>
+                <td id="treatmentCurative">
+                    <!-- <workflowState
+					workflowId="bc04fe8c-869e-4b9b-8b9f-7224c0a3cb1f"
+					stateId="cb777216-77f6-478a-9353-12ed7e85a929"
+					stateLabel="Curative" type="checkbox" /> -->
+                    <obs conceptId="74bf3a55-6e92-4b91-86b0-a19345f22ad2" answerConceptId="3d996ff0-4990-42d4-a7cf-45ead911d7af" answerLabel="Curative" type="checkbox" />
+                </td>
+                <td id="treatmentPalliative">
+                    <!-- <workflowState
+					workflowId="bc04fe8c-869e-4b9b-8b9f-7224c0a3cb1f"
+					stateId="eb4eeb73-996d-47c9-928e-f0569999eefa"
+					stateLabel="Palliative systemic therapy" type="checkbox" /> -->
+                    <obs conceptId="74bf3a55-6e92-4b91-86b0-a19345f22ad2" answerConceptId="0d02a051-9196-4f89-883a-8a443989ed65" answerLabel="Palliative systemic therapy" type="checkbox" />
+                </td>
+                <td id="treatmentPalliation">
+                    <!-- <workflowState
+					workflowId="bc04fe8c-869e-4b9b-8b9f-7224c0a3cb1f"
+					stateId="353e32de-4b62-4e09-9a4d-829942483db0"
+					stateLabel="Palliation ONLY" type="checkbox" /> -->
+                    <obs conceptId="74bf3a55-6e92-4b91-86b0-a19345f22ad2" answerConceptId="11fbb8e0-e069-4036-9095-56049540ab7c" answerLabel="Palliation ONLY" type="checkbox" />
+                </td>
+            </tr>
+
+
         </table>
         <table class="togglebles" width="100%">
             <obsgroup groupingConceptId="d4ceafd0-e5b5-422a-aecd-eac58207cbcc">
                 <TBODY id="toggleble23">
-                    <tr>
+                    <tr id="row8" class="checkboxGroup">
                         <th class="tableHeader" colspan="4">CHEMOTHERAPY &#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <workflowState workflowId="e0a43e8d-27ce-4417-a497-54974c699bc0" stateId="73521919-ea8b-43e9-ad44-20fbdad33a75" stateLabel="Planned" type="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <workflowState workflowId="e0a43e8d-27ce-4417-a497-54974c699bc0" stateId="3f13abb5-0a00-4fac-b89b-4d0679c3b6e1" stateLabel="Not planned" type="checkbox" />
+
+                            <!-- <workflowState workflowId="e0a43e8d-27ce-4417-a497-54974c699bc0" stateId="73521919-ea8b-43e9-ad44-20fbdad33a75" stateLabel="Planned" type="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160; -->
+
+                            <obs conceptId="d841784f-04aa-444b-9460-4125233c0aea" answerConceptId="c0fea63b-2e63-49aa-b0eb-5297f98355ef" answerLabel="Planned" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                            <!-- <workflowState workflowId="e0a43e8d-27ce-4417-a497-54974c699bc0" stateId="3f13abb5-0a00-4fac-b89b-4d0679c3b6e1" stateLabel="Not planned" type="checkbox" /> -->
+
+                            <obs conceptId="d841784f-04aa-444b-9460-4125233c0aea" answerConceptId="7ff97aed-5be5-432a-8ba2-45ef783dc108" answerLabel="Not Planned" />
+
                         </th>
                     </tr>
                     <tr>
@@ -502,7 +531,7 @@
         <table class="togglebles" width="100%">
             <obsgroup groupingConceptId="63ad7caa-b6e2-4b9a-b462-771a9b048c36">
                 <TBODY id="toggleble22">
-                    <tr>
+                    <tr id="row9" class="checkboxGroup">
                         <th class="tableHeader" colspan="4">RADIATION THERAPY &#160;&#160;&#160;&#160;&#160;&#160;&#160;
                             <!-- <workflowState
 					workflowId="bf1d4a87-4219-4741-ac9a-770fb7cb7036"
