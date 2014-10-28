@@ -483,61 +483,64 @@
 
 
         </table>
-        <table class="togglebles" width="100%">
-            <obsgroup groupingConceptId="d4ceafd0-e5b5-422a-aecd-eac58207cbcc">
-                <TBODY id="toggleble23">
-                    <tr id="row8" class="checkboxGroup">
-                        <th class="tableHeader" colspan="4">CHEMOTHERAPY &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        
+       <table class="togglebles" width="100%">
+            <obsgroup groupingConceptId="c0f544c2-b233-4956-a8d6-b75153992f00">
+                <TBODY id="toggleble21">
+                    <tr class="checkboxGroup">
+                        <th class="tableHeader" colspan="4">SURGERY &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 
-                            <!-- <workflowState workflowId="e0a43e8d-27ce-4417-a497-54974c699bc0" stateId="73521919-ea8b-43e9-ad44-20fbdad33a75" stateLabel="Planned" type="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160; -->
 
-                            <obs conceptId="d841784f-04aa-444b-9460-4125233c0aea" answerConceptId="c0fea63b-2e63-49aa-b0eb-5297f98355ef" answerLabel="Planned" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <!-- <workflowState
+					workflowId="f213cee1-df80-4a6d-a3eb-44e4581c3479"
+					stateId="d9a71d5e-cad4-432b-ab00-6a1edc7a226d" stateLabel="Planned"
+					type="checkbox" /> -->
 
-                            <!-- <workflowState workflowId="e0a43e8d-27ce-4417-a497-54974c699bc0" stateId="3f13abb5-0a00-4fac-b89b-4d0679c3b6e1" stateLabel="Not planned" type="checkbox" /> -->
+                            <obs id="plannedSurgery" conceptId="985e240a-7654-44cc-b436-cc20944f4a4a" answerConceptId="c0fea63b-2e63-49aa-b0eb-5297f98355ef" answerLabel="Planned" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 
-                            <obs conceptId="d841784f-04aa-444b-9460-4125233c0aea" answerConceptId="7ff97aed-5be5-432a-8ba2-45ef783dc108" answerLabel="Not Planned" />
+                            <!-- <workflowState
+					workflowId="f213cee1-df80-4a6d-a3eb-44e4581c3479"
+					stateId="16387e03-5410-45e1-9f98-9e82ba245605"
+					stateLabel="Not planned" type="checkbox" /> -->
+
+                            <obs id="notPlannedSurgery" conceptId="985e240a-7654-44cc-b436-cc20944f4a4a" answerConceptId="7ff97aed-5be5-432a-8ba2-45ef783dc108" answerLabel="Not planned" />
+
 
                         </th>
                     </tr>
-                    <tr>
-                        <td>Regimen</td>
+
+                    <tr class="checkboxGroup">
+                        <td>Facility</td>
                         <td>
-                            <obs id="chemotherapyRegimenObs" conceptId="012df739-5bd1-445c-a76e-de0d5702d86a" labelText="" />
+                            <obs id="surgeryFacilityButaroObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="Butaro" style="checkbox" />
+                            <obs id="surgeryFacilityKFObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KHF" style="checkbox" />
+                            <obs id="surgeryFacilityCHUKObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" style="checkbox" />
+                            <obs id="surgeryFacilityCHUBObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" style="checkbox" />
+                            <obs id="surgeryFacilityObsOthers" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="OTHERS:" style="checkbox" />
+                            <obs id="surgeryFacilityObsOthersText" conceptId="13c825f8-615a-429d-b813-ef9bdf8830ea" labelText="" />
+                        </td>
+                    </tr>
+                    <tr class="spaceUnder">
+                        <td>Planned date</td>
+                        <td>
+                            <obs id="surgeryStartDateObs" conceptId="409ebbae-8a1e-43d4-82e8-eea7b493b51d" />
                         </td>
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td>Cycles</td>
+                    <tr class="checkboxGroup">
+                        <td>Surgery Type</td>
                         <td>
-                            <obs id="chemotherapyCyclesObs" conceptId="aaeb5782-3ee6-4cb8-9d27-c557ad91e241" labelText="" />
+                            <obs id="gastrectomyObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="f890c8da-3eea-4825-95a8-f55c9a6c4bc6" answerLabel="Gastrectomy" />
+                            <obs id="esophagectomyObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="a46b5020-f1fc-4248-9492-4f5039babc34" answerLabel="Esophagectomy" />
+                            <obs id="surgeryTypeOthersObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" style="checkbox" />
+                            <obs id="surgeryTypeTextObs" conceptId="4eeeb806-b306-407e-a46f-19eafd59f71b" />
+
                         </td>
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td>Planned first cycle</td>
-                        <td>
-                            <obs id="chemotherapyFirstCycleObs" conceptId="e9b59f4e-8a3f-467f-b5e0-1296025fb286" allowFutureDates="true" labelText="" />
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Planned regimen length</td>
-                        <td>
-                            <obs id="chemotherapyRegimenEndObs" conceptId="6ecc0570-9711-47ad-b9f9-997dd0964e17" labelText="" />weeks</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Planned changes to standard regimen</td>
-                        <td>
-                            <obs id="chemotherapyStandardRegimenObs" conceptId="d6e5e3a7-2ab7-45c2-a104-4f49ed01aefc" labelText="" />
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+
                 </TBODY>
             </obsgroup>
         </table>
