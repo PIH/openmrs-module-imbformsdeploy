@@ -1,6 +1,6 @@
 <htmlform>
     <!--
-           Oncology - Breast DST
+           Oncology - Colon DST
             Pilot_4July_v1.3NT
                 Author:  
                 Builder: Bailly RURANGIRWA 
@@ -391,52 +391,50 @@
         <!-- End of the pathology section -->
         <table>
             <tr class="spaceUnder">
-                <th class="tableHeader" colspan="6">
-                    <h3>FINAL DISEASE STAGING</h3>
-                </th>
-            </tr>
-            <tr class="spaceUnder">
-                <td colspan="6"><b>Confirmed Disease Stage</b>
+                <td colspan="6"><b>Confirmed Diagnosis Details</b>
                 </td>
             </tr>
             <tr class="spaceUnder">
-                <td colspan="6">ECOG Functional Status
-                    <obs id="" conceptId="8ad685de-4f19-4b75-b3f1-ee3b06bf05a2" />(0-5)
+                <td colspan="6">Mass location:
+                 &#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="45bcb68f-a066-4abb-b95c-881e018f4d0c" answerConceptId="3ce9949a-26fe-102b-80cb-0017a47871b2" answerLabel="Right side" />
+                    &#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="45bcb68f-a066-4abb-b95c-881e018f4d0c" answerConceptId="3ce99198-26fe-102b-80cb-0017a47871b2" answerLabel="Left Side" />
+                   &#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="45bcb68f-a066-4abb-b95c-881e018f4d0c" answerConceptId="7411d7ed-e492-44b0-b73e-f6dd414bd36a" answerLabel="Sigmoid" />
+                   &#160;&#160;&#160;&#160;&#160;&#160;
+                      <obs conceptId="45bcb68f-a066-4abb-b95c-881e018f4d0c" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other" />
+                
                 </td>
             </tr>
-            <tr>
-                <td>TIS Staging*:</td>
-                <obsgroup groupingConceptId="60f733d6-7000-48eb-be8e-c503b094b882">
-                    <td>
-                        <obs id="kaposiStageTISTObs" conceptId="40121f41-5303-4b18-8251-1d62e0eb3e2f" labelText="T:" />
-                    </td>
-                    <td>
-                        <obs id="kaposiStageTISIObs" conceptId="26ada79f-153a-4067-b4dd-bec6bfc40647" labelText="I:" />
-                    </td>
-                    <td>
-                        <obs id="kaposiStageTISSObs" conceptId="2476256a-2c16-4605-adcb-2ca1d33c299d" labelText="S:" />
-                    </td>
-                </obsgroup>
-                <td></td>
-                <td></td>
-            </tr>
+		<tr>
+			<td colspan="6">Mass size:&#160;&#160;&#160;&#160;&#160;&#160; <obs id="colonCancerMassSize1Obs"
+					conceptId="f174b027-79cf-4ebf-a103-d34b26eacafd" /> X <obs
+					id="colonCancerMassSize2Obs"
+					conceptId="f174b027-79cf-4ebf-a103-d34b26eacafd" /> cm 
+                </td>
+        </tr>
 
+              <tr>
+                    <td colspan="6">
+                        <br />
+                    </td>
+                </tr>
 
-            <tr id="row7" class="checkboxGroup">
-                <td>ACTG Clustered Stage<sup>*</sup>:
-                </td>
+                <tr>
+
+                    <td colspan="6">
+                        <b>Other Mass Details:</b>
+                        <obs id="otherMassLocation" conceptId="e95848e2-f31c-485f-ba8b-8c9424840f92" size="40" />
+
+                    </td>
+                </tr>
+
+		<tr class="checkboxGroup">
                 <td>
-                    <obs id="" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="39c6497d-fe50-4dcf-86e4-5360e1d32f82" answerLabel="I" />
-                </td>
-                <td>
-                    <obs id="" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="c899d4c0-91a1-42f2-b395-114740f237fd" answerLabel="II" />
-                </td>
-                <td>
-                    <obs id="" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="1d5896f3-2e0e-4bc2-aa6c-afe1911afa79" answerLabel="III" />
-                </td>
-                <td>
-                </td>
-                <td>
+                Pre-Operative Clinical Staging
+                <br/><br/>
+                
                 </td>
             </tr>
 
