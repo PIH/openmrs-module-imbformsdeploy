@@ -780,15 +780,34 @@
                 </TBODY>
             </obsgroup>
         </table>
-	<br/>
-        <workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b" stateId="09426655-2909-4f6f-938b-7a31b991075e" type="hidden" />
-       
+	 <br/>
+        <table id="signature">
+
+            <tr class="diagnosisPrintArea, spaceUnder">
+                <td class="lables">Specialists consulted on this case:</td>
+                <td class="values"><span><input type="checkbox" name="" value="">Oncologist:___________________</input></span>
+                </td>
+                <td class="values"><span><input type="checkbox" name="" value="">Surgeon:___________________</input><input type="checkbox" name="" value="">None</input></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea, spaceUnder">
+                <td colspan="3" class="lables"><b>Staging and treatment plan confirmed by:</b>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="values"><span>__________________________________<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(Internist Name)</span>
+                </td>
+                <td class="values"><span>__________________________________<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(Signature)</span>
+                </td>
+                <td class="values"><span>________/___________/_____________<br/>&#160;&#160;&#160;&#160;(dd)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(mm)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(yyy)</span>
+                </td>
+            </tr>
+        </table>
+
+        <br />
+
+        <submit />
     </div>
 
- <br/>
- <div id="submitArea">
-        <submit />
-        <br/>
-        <encounterVoided/>
-        </div>
+    <encounterVoided/>
 </htmlform>
