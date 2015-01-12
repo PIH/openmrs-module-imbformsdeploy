@@ -70,6 +70,7 @@
     @AGE_USED@=1fca6d51-255f-493d-a281-7521b384a623
     
     @HEAD_CIRCUMFERENCE@=3ceb96b4-26fe-102b-80cb-0017a47871b2
+    @HEAD_CIRCUMFERENCE_CODED@=2ac4f449-c2e3-4def-8eb8-61c6ce598c9b
     @WEIGHT_FOR_AGE_Z_SCORE@=c9d8c9db-518c-4a00-985d-d2fc8ac1f739
     @HEIGHT_FOR_AGE_Z_SCORE@=6d4b1720-f45c-4069-98d9-e7e865105a7a
     @WEIGHT_FOR_HEIGHT_Z_SCORE@=2438e295-d9da-4d5c-bacc-13c313e34755
@@ -109,6 +110,12 @@
     @REASON_FOR_DISCHARGE@=f470784b-d703-439c-958b-21f52862ff6b
     @PATIENT_MET_CONDITION_SPECIFIC_CRITERIA@=8c330b47-ced4-47ca-82d6-fd281d801aa6
     @MORE_THAT_FIVE_YEARS_OLD@=0c592f32-c565-415f-9834-4178dea6ce64
+    
+    @INTERVAL_GROWTH_CODED@=aa1ab203-98f6-4b11-8987-b2de6b5a591f
+    @NO_PREVIOUS_WEIGHT@=2c43efb0-0606-45e0-9fb2-077126893153
+    @ADEQUATE@=082cbbb7-d503-4883-b5c7-cb83695a49ff
+    @INADEQUATE@=571e04c6-3a91-41d6-9a40-3404961be403
+    @NOT_APPLICABLE@=3cd7b72a-26fe-102b-80cb-0017a47871b2
      </macros>
 	
 <style>
@@ -416,10 +423,23 @@ table {
 				<tr>
 					<td><obs conceptId="$@WEIGHT@" labelText="" /><br/>kg</td>
 					<td><obs conceptId="$@HEIGHT@" labelText="" /><br/>cm</td>
-					<td align="left"><obs conceptId="$@INTERVAL_GROWTH@" labelText="" /><br/> <span class="disabled">☐no previous weight<br /> ☐adequate<br />
-						☐inadequate<br /> ☐N/A (>6mo)<br /></span>
+					<td align="left"><obs conceptId="$@INTERVAL_GROWTH@" labelText="" /><br/> 
+					
+				    <span class="">
+					<obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@NO_PREVIOUS_WEIGHT@" answerLabel="no previous weight" style="checkbox" />
+                    <br /> 
+				    <obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@ADEQUATE@" answerLabel="adequate" style="checkbox" />
+                    <br />
+					<obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@INADEQUATE@" answerLabel="inadequate" style="checkbox" />
+                    <br /> 
+					<obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A (>6mo)" style="checkbox" />
+                    <br />
+					</span>
 					</td>
-					<td align="left"><obs conceptId="$@HEAD_CIRCUMFERENCE@" labelText="" /><br/><span class="disabled">cm ☐N/A (>18mo)</span></td>
+					<td align="left"><obs conceptId="$@HEAD_CIRCUMFERENCE@" labelText="" /><br/><span class="">cm<br/>
+					 <obs id="" conceptId="$@HEAD_CIRCUMFERENCE_CODED@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A (>18mo)" style="checkbox" />
+					 </span>
+					</td>
 					<td align="left"><obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" labelText="" /><br /><span class="disabled"> ☐&gt; -2<br /> ☐&gt; -3<br />
 						AND &lt; -2<br /> ☐&lt;-3</span>
 					</td>
